@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const bodyEl = document.querySelector("body");
+      const h2El = document.createElement("h2");
+      h2El.textContent = "Keywords";
+      h2El.style.marginLeft = "28rem";
+      bodyEl.appendChild(h2El);
+
+      const allEl = document.createElement("div");
+      allEl.style.display = "flex";
+      allEl.style.gridRowGap = "0.3rem";
+      allEl.style.gridColumnGap = "0.9rem";
+      allEl.style.flexWrap = "wrap";
+      allEl.style.margin = "auto";
+      allEl.style.maxWidth = "45rem";
+      bodyEl.appendChild(allEl);
+      const keywords =
+        "# HTML, # HTML5, # CSS, # CSS3, # JS, # JavaScript, # ES6, # Promise, # async await, # Database, # React, # React Hooks, # Context API, # React Router, # Redux, # Node, # MongoDB, # SQL, # API, # DOM, # data science, # MERN, # Python, # Flask, # Statistics, # Linear Algebra, # Numpy, # Pandas, # Scipy, # Scikit-learn, # Visualization, # D3.js".split(
+          ","
+        );
+      const colors = (max = 256) => Math.floor(Math.random() * max);
+      keywords.forEach((keyword) => {
+        keyEl = document.createElement("div");
+        keyEl.style.width = "fit-content";
+        keyEl.style.display = "grid";
+        keyEl.style.placeItems = "center";
+        keyEl.textContent = keyword;
+        keyEl.style.backgroundColor = `rgb(${colors()}, ${colors()}, ${colors()})`;
+        keyEl.style.borderRadius = "30px";
+        keyEl.style.padding = "0.5rem 1.5rem 0.5rem 0.5rem";
+        allEl.appendChild(keyEl);
+      });
+    </script>
+  </body>
+</html>
