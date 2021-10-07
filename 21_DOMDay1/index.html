@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Day 1</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Asabeneh Yetayeh challenges in 2020</h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+      </header>
+      <ul>
+        <li>30DaysOfPython Challenge Done</li>
+        <li>30DaysOfJavaScript Challenge Ongoing</li>
+        <li>30DaysOfReact Challenge Coming</li>
+        <li>30DaysOfFullStack Challenge Coming</li>
+        <li>30DaysOfDataAnalysis Challenge Coming</li>
+        <li>30DaysOfReactNative Challenge Coming</li>
+        <li>30DaysOfMachineLearning Challenge Coming</li>
+      </ul>
+    </div>
+    <script>
+      // selectors
+      const h1El = document.querySelector("h1");
+      const headerEl = document.querySelector("header");
+      const wrapperEl = document.getElementById("wrapper");
+      const contentEL = document.querySelectorAll("li");
+
+      const color = () => Math.floor(Math.random() * 256);
+
+      h1El.innerHTML =
+        h1El.textContent.replace(/\d+/g, "") +
+        `<span id="year">${new Date().getFullYear()}<span/>`;
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      headerEl.innerHTML += `<span class = 'time'></span>`;
+
+      const timeEl = document.querySelector(".time");
+      const yearEl = document.querySelector("#year");
+
+      // styling);
+      yearEl.style.fontSize = "4rem";
+      wrapperEl.style.maxWidth = "50rem";
+      wrapperEl.style.margin = "auto";
+      headerEl.style.textAlign = "center";
+      document.querySelector("h2").style.textDecoration = "underline";
+      timeEl.style.padding = "0.5rem 1rem";
+      contentEL.forEach((each) => {
+        each.style.padding = "1rem";
+        each.style.listStyleType = "none";
+        each.style.marginBottom = "0.2rem";
+        each.style.backgroundColor = each.textContent.includes("Done")
+          ? "green"
+          : each.textContent.includes("Ongoing")
+          ? "yellow"
+          : "red";
+      });
+      setInterval(() => {
+        timeEl.style.backgroundColor = `rgb(${color()}, ${color()}, ${color()})`;
+        yearEl.style.color = `rgb(${color()}, ${color()}, ${color()})`;
+        timeEl.textContent = `${
+          monthNames[new Date().getMonth()]
+        } ${new Date().getDate()}, ${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getMinutes()}:${
+          new Date().getSeconds() < 10
+            ? `0${new Date().getSeconds()}`
+            : new Date().getSeconds()
+        }`;
+      }, 1000);
+    </script>
+  </body>
+</html>
