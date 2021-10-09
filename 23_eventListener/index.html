@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Event Listener</title>
+  </head>
+
+  <style>
+    header {
+      text-align: center;
+    }
+    button {
+      background-color: green;
+      border: none;
+      outline: none;
+      color: white;
+      margin-left: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+    }
+    input {
+      border: 2px solid green;
+      outline: none;
+      width: 30rem;
+    }
+    h1 {
+      color: green;
+      margin-bottom: -1rem;
+      font-size: 2.5rem;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      max-width: 50rem;
+      margin: auto;
+      margin-top: 2rem;
+      grid-gap: 0.3rem;
+    }
+    .alert {
+      margin-left: 31rem;
+      margin-bottom: 0.5rem;
+    }
+    .author {
+      margin: -1rem 0 1.2rem;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>Number Generator</h1>
+      <h2>30DaysOfJavaScript: DOM Day 3</h2>
+      <p class="author">Author: Asabeneh Yetayeh</p>
+    </header>
+    <p class="alert"></p>
+    <form onsubmit="return false">
+      <input type="text" placeholder="Generate more numbers..." />
+      <button>Generate numbers</button>
+    </form>
+    <div class="container"></div>
+    <script>
+      function isPrimeNo(x) {
+        if (x === 0 || x === 1) return false;
+        for (i = x - 1; i > 1; i--) {
+          if (x % i === 0) return false;
+        }
+        return true;
+      }
+      const buttonEl = document.querySelector("button");
+      const inputEl = document.querySelector("input");
+      const containerEl = document.querySelector("div");
+      const pEl = document.querySelector(".alert");
+
+      generatedNum = (max = 20) => {
+        containerEl.innerHTML = "";
+        Array.from(Array(max).keys()).forEach((num) => {
+          const numbersEl = document.createElement("div");
+          numbersEl.style.height = "3rem";
+          numbersEl.style.display = "grid";
+          numbersEl.style.fontSize = "2rem";
+          numbersEl.style.fontWeight = "bolder";
+          numbersEl.style.placeItems = "center";
+          numbersEl.style.color = "white";
+          numbersEl.style.backgroundColor = isPrimeNo(num)
+            ? "red"
+            : num % 2
+            ? "yellow"
+            : "green";
+          numbersEl.textContent = num;
+          containerEl.appendChild(numbersEl);
+        });
+      };
+      generatedNum();
+      buttonEl.addEventListener("click", () => {
+        let nums = Number(inputEl.value);
+        if (isNaN(nums)) {
+          pEl.textContent = "Input value must be a number";
+          pEl.style.color = "red";
+          setInterval(() => {
+            pEl.textContent = "";
+          }, 10_000);
+          return;
+        }
+        if (!nums) {
+          pEl.textContent =
+            "Enter number value on the input field to generate numbers";
+          pEl.style.color = "red";
+          setInterval(() => {
+            pEl.textContent = "";
+          }, 10000);
+          return;
+        }
+        generatedNum(nums);
+      });
+    </script>
+  </body>
+</html>

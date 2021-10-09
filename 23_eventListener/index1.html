@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rem;
+      }
+      h1 {
+        font-size: 4rem;
+        box-shadow: 3px 3px 4px 4px lightgrey;
+        padding: 0.7rem 4rem;
+        font-weight: 500;
+      }
+      #code {
+        font-size: 5rem;
+      }
+      span {
+        font-weight: bolder;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Press any keyboard key <span id="key"></span></h1>
+    <span id="code"></span>
+    <script>
+      window.addEventListener("keydown", (e) => {
+        document.querySelector(
+          "h1"
+        ).innerHTML = `You pressed <span id="key"></span>`;
+        document.querySelector("#key").textContent = e.key;
+        document.querySelector("#code").textContent = e.keyCode;
+        document.querySelector("#code").style.padding = "2rem 2rem";
+        document.querySelector("#code").style.boxShadow =
+          "0px 0px 5px 1px lightgrey";
+      });
+    </script>
+  </body>
+</html>
