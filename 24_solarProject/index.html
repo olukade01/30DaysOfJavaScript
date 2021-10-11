@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Planet</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url("./images/galaxy.gif");
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+      }
+      form {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+      }
+      select {
+        margin: 0 0.5rem;
+        padding: 0 1rem;
+        outline: none;
+      }
+      input {
+        padding: 0.5rem 1rem;
+        outline: none;
+      }
+      button {
+        background-color: darkgrey;
+        outline: none;
+      }
+      .main {
+        width: 60%;
+        padding: 3rem;
+        background-color: rgba(100, 100, 100, 0.2);
+        margin: 1rem auto;
+      }
+      .inner {
+        width: 40%;
+        padding: 1.5rem;
+        background-color: rgba(100, 100, 100, 0.4);
+        margin: 0.2rem auto 0;
+        color: white;
+        font-size: 1.5rem;
+        display: grid;
+        place-items: center;
+      }
+      .hide {
+        display: none;
+      }
+      img {
+        display: flex;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculate a weight of an object on a planet</h1>
+    <form action="">
+      <input name="mass" type="number" placeholder="Mass in Kilogram" />
+      <select name="planet" id="">
+        <option value="" disabled selected>--select planet--</option>
+      </select>
+      <button>Calculate weight</button>
+    </form>
+    <div class="main">
+      <img alt="planet" src="./images/earth.png" />
+      <div class="inner hide">
+        <!-- <div class="inner-circle"></div> -->
+      </div>
+    </div>
+    <script>
+      const inputEl = document.querySelector("input");
+      const selectEl = document.querySelector("select");
+      const formEl = document.querySelector("form");
+      const innerEl = document.querySelector(".inner");
+      const imgEl = document.querySelector("img");
+      const mainEl = document.querySelector(".main");
+      const planets = [
+        "EARTH",
+        "JUPITER",
+        "MARS",
+        "MERCURY",
+        "MOON",
+        "NEPTUNE",
+        "PLUTO",
+        "SATURN",
+        "URANUS",
+        "VENUS",
+      ];
+      const planetDivisors = {
+        earth: 2.2046,
+        jupiter: 2.1,
+        mars: 2.2,
+        mercury: 2.3,
+        moon: 3,
+        neptune: 2.11,
+        pluto: 1.8,
+        saturn: 2.22,
+        uranus: 1,
+        venus: 2.8,
+      };
+
+      planets.forEach((planet) => {
+        selectEl.innerHTML += `<option value='${planet}'>${planet}</option>`;
+      });
+      const planetUrl =
+        "https://raw.githubusercontent.com/Asabeneh/30-Days-Of-JavaScript/master/24_Day_Project_solar_system/24_day_starter/images";
+
+      formEl.addEventListener("submit", (e) => {
+        e.preventDefault();
+        innerEl.classList.remove("hide");
+
+        const mass = e.target.mass.value;
+        const planet = e.target.planet.value;
+        imgEl.setAttribute("src", `${planetUrl}/${planet.toLowerCase()}.png`);
+        mainEl.style.display = "flex";
+        mainEl.style.justifyContent = "center";
+        mainEl.style.alignItems = "center";
+        if (!mass) {
+          innerEl.textContent = "Mass is required";
+          imgEl.classList.add("hide");
+          return;
+        }
+        if (!planet) {
+          innerEl.textContent = "You did not choose a planet yet";
+
+          return;
+        }
+
+        imgEl.classList.remove("hide");
+        const weight = Number(mass) / planetDivisors[planet.toLowerCase()];
+        innerEl.innerHTML = `The weight of the object on ${planet} is <span class = 'weigh'>${weight.toFixed(
+          2
+        )} N</span>`;
+        const weighEl = document.querySelector(".weigh");
+        weighEl.style.backgroundColor = "rgba(100, 100, 100, 0.6)";
+        weighEl.style.width = "7rem";
+        weighEl.style.height = "7rem";
+        weighEl.style.borderRadius = "50%";
+        weighEl.style.display = "grid";
+        weighEl.style.placeItems = "center";
+        weighEl.style.margin = "1rem";
+        weighEl.style.fontWeight = "bolder";
+      });
+    </script>
+  </body>
+</html>
