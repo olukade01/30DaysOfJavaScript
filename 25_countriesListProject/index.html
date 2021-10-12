@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Proejct</title>
+    <style>
+      html,
+      body {
+        font-family: "Avenir", Segoe UI, Ubuntu, Sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 2.5rem;
+        color: orange;
+        margin-bottom: -0.5rem;
+      }
+
+      header {
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid lightgrey;
+        background-color: #eeefef;
+      }
+
+      #data {
+        max-width: 100%;
+        padding: 2rem 20rem;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-gap: 1rem;
+        background-color: #eeefef;
+        margin-top: -0.5rem;
+      }
+
+      #data > div {
+        position: relative;
+      }
+
+      #data > div span {
+        position: absolute;
+        /* left: 0; */
+        /* top: 0; */
+        height: 1.6rem;
+        background: orange;
+      }
+      button {
+        background-color: orange;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        border-radius: 3px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>World Countries Data</h1>
+      <p>Currently, we have <span id="countriesCount"></span> countries</p>
+    </header>
+
+    <main>
+      <center>
+        <br />
+        <button>POPULATION</button>
+        <button>LANGUAGES</button>
+        <p id="data-info">10 most populated countries in the world</p>
+      </center>
+      <hr />
+      <div id="data">
+        <!-- <span>China</span>
+        <div>
+          <span style="width: 70%"></span>
+        </div>
+        <span>4,70900</span> -->
+      </div>
+    </main>
+    <script src="./countries.js"></script>
+    <script>
+      document.getElementById("countriesCount").textContent = countries.length;
+      const infoEl = document.getElementById("data-info");
+      const dataEl = document.getElementById("data");
+
+      function populationData() {
+        const worldPopulation = countries.reduce(
+          (acc, cur) => acc + cur.population,
+          0
+        );
+        const mostPopulated = countries
+          .sort((a, b) => b.population - a.population)
+          .slice(0, 10);
+        dataEl.innerHTML = `<span>World</span>
+          <div>
+            <span style="width: 100%"></span>
+            </div>
+            <span>${worldPopulation.toLocaleString()}</span>`;
+        mostPopulated.forEach((country) => {
+          dataEl.innerHTML += `<span>${country.name}</span>
+              <div>
+                <span style="width: ${parseInt(
+                  (country.population * 100) / worldPopulation
+                )}%"></span>
+                  </div>
+                  <span>${country.population.toLocaleString()}</span>`;
+        });
+      }
+
+      function languageData() {
+        dataEl.innerHTML = "";
+        let languages = {};
+        countries.forEach((country) => {
+          country.languages.forEach((language) => {
+            if (languages[language]) languages[language]++;
+            else languages[language] = 1;
+          });
+        });
+        const sortedLanguages = Object.entries(languages)
+          // .map((language) => ({
+          //   language: language[0],
+          //   count: language[1],
+          // }));
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 10);
+        // console.log(sortedLanguages);
+        const allLanguages = new Set(
+          countries.map((country) => country.languages).flat()
+        ).size;
+
+        sortedLanguages.forEach((lang) => {
+          dataEl.innerHTML += `
+        <span>${lang[0]}</span>
+        <div><span style="width: ${(lang[1] * 100) / allLanguages}%">
+
+          </span></div>
+        <span>${lang[1]}</span>
+        `;
+        });
+      }
+
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          const clicked = event.target.textContent.toLowerCase();
+
+          if (clicked === "population") {
+            populationData();
+            infoEl.textContent = "10 most populated countries in the world";
+          }
+          if (clicked === "languages") {
+            infoEl.textContent = "10 most spoken languages in the world";
+            languageData();
+          }
+        });
+      });
+      populationData();
+    </script>
+  </body>
+</html>
