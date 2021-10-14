@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 1.5rem 8.7rem;
+      }
+      h1 {
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        font-weight: bold;
+      }
+      .animation {
+        background-color: #eddfde;
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+      .challenge {
+        display: flex;
+        padding: 0 4rem;
+        justify-content: space-between;
+      }
+      .box {
+        background-color: #fdfefe;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+        width: 13rem;
+        height: 7rem;
+      }
+      .box:hover {
+        background-color: #ecdede;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+      }
+      .courses {
+        animation: fadeout 3s ease-in-out infinite;
+      }
+      @keyframes fadeout {
+        0% {
+          opacity: 0;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .skills {
+        animation: movement 3s linear infinite;
+      }
+      @keyframes movement {
+        0% {
+          margin-left: -0.7rem;
+          opacity: 0;
+        }
+        50% {
+          margin-left: 2rem;
+          opacity: 0.5;
+        }
+        100% {
+          margin-left: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Asabeneh Yetayeh</h1>
+    <div class="animation">
+      <img class="image" src="./images/image1.svg" alt="icons" />
+      <span class="skills"></span>
+    </div>
+    <p>
+      I am Asabeneh Yetayeh. I am instructor, developer, motivator and content
+      creator. I love educating people and creating educational materials. In
+      January 2019, i also created a teaching material
+      <b>JavaScript For Everyone.</b> In December 2019, I created
+      <b>30Days Of Python</b> challenge and in Janary 2020
+      <b>30 Days Of JavaScript</b> challenge.
+    </p>
+    <div class="challenge">
+      <span class="box">JAVASCRIPT FOR EVERYONE</span>
+      <span class="box">30DAYS OF PYTHON</span>
+      <span class="box">30DAYS OF JAVASCRIPT</span>
+    </div>
+    <p>The technologies I teach <span class="courses"></span></p>
+    <script>
+      const courses = [
+        { name: "REDUX", color: "purple" },
+        { name: "NODE", color: "green" },
+        { name: "PYTHON", color: "blue" },
+        { name: "MONGODB", color: "green" },
+        { name: "PANDAS", color: "blue" },
+        { name: "NUMPY", color: "blue" },
+        { name: "HTML", color: "pink" },
+        { name: "JAVASCRIPT", color: "yellow" },
+        { name: "REACT", color: "lightblue" },
+      ];
+      const skills = [
+        "Content Creator",
+        "Educator",
+        "Instructor",
+        "Motivator",
+        "Motivational Speaker",
+        "Programmer",
+      ];
+      const animationEl = document.querySelector(".skills");
+      const coursesEl = document.querySelector(".courses");
+      const imageEl = document.querySelector(".image");
+      let i = 0;
+      setInterval(() => {
+        coursesEl.textContent = courses[i].name;
+        i = i === courses.length - 1 ? 0 : i + 1;
+        coursesEl.style.color = courses[i].color;
+        coursesEl.style.fontSize = "2rem";
+        coursesEl.style.fontWeight = "bolder";
+      }, 3000);
+
+      let j = 0;
+      setInterval(() => {
+        animationEl.textContent = skills[j];
+        j = j === skills.length - 1 ? 0 : j + 1;
+        imageEl.setAttribute("src", `./images/image${j}.svg`);
+      }, 3000);
+    </script>
+  </body>
+</html>
