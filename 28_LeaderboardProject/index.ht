@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+    <style>
+      /* html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        margin-right: 0.5rem;
+        height: 2rem;
+        border-color: magenta;
+        outline: none;
+      }
+      button {
+        padding: 0 1.5rem;
+        outline: none;
+        background-color: pink;
+        border: none;
+      }
+      ::placeholder {
+        font-size: 1rem;
+        padding-left: 0.2rem;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 60rem;
+        margin: auto;
+      } */
+
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+      *,
+      ** {
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      input {
+        width: 8rem;
+        height: 2rem;
+        padding: 0.3rem;
+        border: 2px solid #f9e3df;
+        color: #9a989a;
+        font-size: 1rem;
+      }
+      input:focus {
+        outline: none;
+      }
+      .container1 {
+        display: flex;
+        justify-content: center;
+        column-gap: 0.4rem;
+      }
+      .first-button {
+        width: 8rem;
+        background-color: #e4c8c4;
+        color: white;
+        border-color: #e4c8c4;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      .container2 {
+        display: grid;
+        padding-top: 2rem;
+        width: 60%;
+        grid-row-gap: 1rem;
+        margin-left: 20%;
+        text-transform: uppercase;
+      }
+      .inner1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+        align-items: center;
+        height: 4rem;
+        background-color: #e4c8c4;
+      }
+      .inner2 {
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* align-items: flex-start; */
+      }
+      .events {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+      }
+      .nation {
+        display: flex;
+        width: 13rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>30 Days Of JavaScript Challenge Leaderboard</h1>
+    <form action="">
+      <input type="text" placeholder="First Name" /><input
+        type="text"
+        placeholder="Last Name"
+      /><input type="text" placeholder="Country" /><input
+        type="number"
+        placeholder="Player Score"
+      />
+      <button>Add Player</button>
+    </form>
+    <p></p>
+    <div></div> -->
+
+    <h1>30 Days Of Javascript Challenge Leaderboard</h1>
+    <div class="container1">
+      <input type="text" placeholder="FirstName" />
+      <input type="text" placeholder="LastName" />
+      <input type="text" placeholder="Nationality" />
+      <input type="text" placeholder="Score" />
+      <button class="first-button">Add Player</button>
+    </div>
+    <p></p>
+    <div class="container2">
+      <div class="inner1">
+        <div class="inner2">
+          <span>MATHA YOHANES</span>
+          <span>JUN 30 2021 10:51</span>
+        </div>
+        <span class="nation">FINLAND</span>
+        <span>85</span>
+        <div class="events">
+          <img class="delete" src="./image/img.svg" alt="" />
+          <span>+5</span>
+          <span>-5</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      // const divEl = document.querySelector("div");
+      // const users = [
+      //   {
+      //     firstName: "MARTHA",
+      //     lastName: "YOHANES",
+      //     // date: new Date().toDateString(),
+      //     country: "FINLAND",
+      //     score: 85,
+      //   },
+      //   {
+      //     firstName: "DAVID",
+      //     lastName: "SMITH",
+      //     // date: new Date().toDateString(),
+      //     country: "UNITED KINGDOM",
+      //     score: 80,
+      //   },
+      //   {
+      //     firstName: "ASABENEH",
+      //     lastName: "YETAYEH",
+      //     // date: new Date().toDateString(),
+      //     country: "FINLAND",
+      //     score: 75,
+      //   },
+      //   {
+      //     firstName: "MATHIAS",
+      //     lastName: "ELIAS",
+      //     // date: new Date().toDateString(),
+      //     country: "SWEDEN",
+      //     score: 70,
+      //   },
+      // ];
+
+      // users.forEach((user) => {
+      //   const userEl = document.createElement("div");
+      //   userEl.style.backgroundColor = "red";
+      //   userEl.style.marginBottom = "0.5rem";
+      //   userEl.style.display = "flex";
+      //   // const markup = ``;
+      //   userEl.innerHTML = `${user.firstName} ${user.lastName} ${
+      //     user.country
+      //   } ${
+      //     user.score
+      //   } <span class='delete'></span> <span class='add-five'>${+5}</span> <span class='remove-five'>${-5}</span>`;
+      //   // userEl.innerHTML += markup;
+      //   const spanEl = document.querySelector("span");
+      //   spanEl.style.width = "3rem";
+      //   spanEl.style.height = "3rem";
+      //   spanEl.style.borderRadius = "50%";
+      //   spanEl.style.backgroundColor = "white";
+      //   divEl.appendChild(userEl);
+      // });
+
+      // users.forEach((user) => {
+      //   const userEl = document.createElement("div");
+      //   userEl.style.backgroundColor = "red";
+      //   userEl.style.marginBottom = "0.5rem";
+      //   userEl.style.display = "flex";
+      //   const markup = `<div id='inner-div'> <span class='delete'></span>
+      //   <span class='delet'>${-5}</span>
+      //   <span class='dele'>${+5}</span> </div>`;
+      //   userEl.innerHTML = `${user.firstName} ${user.lastName} ${user.country} ${user.score} `;
+      //   userEl.innerHTML += markup;
+
+      //   const spanEl = document.querySelector("span");
+      //   // spanEl.style.width = "3rem";
+      //   // spanEl.style.height = "3rem";
+      //   // spanEl.style.borderRadius = "50%";
+      //   // spanEl.style.backgroundColor = "white";
+      //   divEl.appendChild(userEl);
+      // });
+      const deleteEl = document.querySelector(".delete");
+      const buttonEl = document.querySelector("button");
+      const inputEl = document.querySelectorAll("input");
+      const pEl = document.querySelector("p");
+      const personEl = document.querySelector(".inner1");
+      container2El = document.querySelector(".container2");
+      buttonEl.addEventListener("click", (e) => {
+        inputEl.forEach((input) => {
+          if (!input.value) {
+            pEl.textContent = "All fields required";
+            pEl.style.color = "red";
+            setTimeout(() => {
+              pEl.textContent = "";
+            }, 2000);
+          }
+        });
+        if (
+          inputEl[0].value &&
+          inputEl[1].value &&
+          inputEl[2].value &&
+          inputEl[3].value
+        ) {
+          const newEl = document.createElement("div");
+          newEl.classList.add("inner1");
+          newEl.innerHTML = `<div class="inner2">
+            <span>${inputEl[0].value} ${inputEl[1].value}</span>
+            <span>JUN 30 2021 10:51</span>
+            </div>
+            <span class="nation">${inputEl[2].value}</span>
+            <span>${inputEl[3].value}</span>
+            <div class="events">
+            <img class="delete" src="./image/img.svg" alt="">
+            <span>+5</span>
+            <span>-5</span>
+            </div>`;
+
+          console.log(newEl);
+          container2El.appendChild(newEl);
+          let deleteEls = document.querySelectorAll(".delete");
+          let personEls = document.querySelectorAll(".inner1");
+          let currentPersonEl = personEls[personEls.length - 1];
+          let currentDeleteEl = deleteEls[deleteEls.length - 1];
+          currentDeleteEl.addEventListener("click", (e) => {
+            currentPersonEl.remove();
+          });
+        }
+        inputEl.forEach((value) => (value = ""));
+      });
+      deleteEl.addEventListener("click", (e) => {
+        personEl.remove();
+      });
+    </script>
+  </body>
+</html>
