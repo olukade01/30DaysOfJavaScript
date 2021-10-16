@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      div {
+        font-size: 6rem;
+        padding: 3rem;
+        line-height: 9rem;
+        width: 75%;
+        height: 70vh;
+        margin: 3rem auto;
+        box-shadow: 2px 2px 10px 2px rgba(100, 100, 100, 0.5);
+      }
+      .letters {
+        animation: fadeout 3s ease-in-out infinite;
+      }
+      @keyframes fadeout {
+        0% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>30 DAYS OF JAVASCRIPT CHALLENGE 2020 ASABENEH YETAYEH</div>
+    <script>
+      const containerEl = document.querySelector("div");
+      const random = () => {
+        return Math.floor(Math.random() * 256);
+      };
+      const fonts = [
+        "Courier New",
+        "Franklin Gothic Medium",
+        "Arial Narrow",
+        "sans-serif",
+        "Segoe UI",
+        "Times New Roman",
+      ];
+      const randomFonts = () => {
+        return Math.floor(Math.random() * fonts.length);
+      };
+      const sentence = containerEl.textContent.split("");
+      console.log(sentence);
+      let i = 0;
+      setInterval(() => {
+        containerEl.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
+        containerEl.innerHTML = "";
+        containerEl.style.fontFamily = fonts[randomFonts()];
+
+        sentence.forEach((letter) => {
+          const letterEl = document.createElement("span");
+          letterEl.classList.add("letters");
+          letterEl.style.color = `rgb(${random()}, ${random()}, ${random()})`;
+          letterEl.textContent = letter;
+          containerEl.appendChild(letterEl);
+        });
+        const spanEl = document.querySelectorAll("span");
+
+        if (i === 0 || i === 1) {
+          spanEl[10].innerHTML += "<br>";
+          spanEl[21].innerHTML += "<br>";
+          i += 1;
+        } else if (i == 2) {
+          spanEl[10].innerHTML = " ";
+          spanEl[21].innerHTML = " ";
+          i += 1;
+        } else if (i == 3) {
+          spanEl[10].textContent = " ";
+          spanEl[21].textContent = " ";
+          i = 0;
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
