@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        font-size: 4rem;
+        padding: 4rem 1rem;
+        max-width: 60%;
+        height: 25vh;
+        margin: 15rem auto;
+        display: flex;
+        align-items: center;
+        box-shadow: 2px 2px 5px 5px rgba(100, 100, 100, 0.3);
+      }
+      .party {
+        width: 5rem;
+        margin: 0 1rem;
+      }
+      .letter,
+      .party {
+        animation: fadeout 3s ease-in-out infinite;
+        letter-spacing: 0.3rem;
+      }
+      @keyframes fadeout {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./party-popper.svg" />
+      <span>CONGRATULATIONS!</span>
+      <img src="./party-popper.svg" />
+    </div>
+    <script>
+      const containerEl = document.querySelector("div");
+      const spanEl = document.querySelector("span");
+      const random = () => {
+        return Math.floor(Math.random() * 256);
+      };
+      const fonts = [
+        "Courier New",
+        "Franklin Gothic Medium",
+        "Arial Narrow",
+        "sans-serif",
+        "Segoe UI",
+        "Times New Roman",
+        "Impact",
+        "Haettenschweiler",
+        "Arial Narrow Bold",
+        "sans-serif",
+      ];
+      const fontWeight = [100, 300, 500, 700, 900];
+      const randomWeight = () => {
+        return Math.floor(Math.random() * fontWeight.length);
+      };
+      const randomFonts = () => {
+        return Math.floor(Math.random() * fonts.length);
+      };
+      const sentence = spanEl.textContent.split("");
+      let newEl;
+      setInterval(() => {
+        containerEl.innerHTML = "";
+        spanEl.style.fontWeight = fontWeight[randomWeight()];
+        spanEl.style.fontFamily = fonts[randomFonts()];
+
+        newEl = document.createElement("img");
+        newEl.setAttribute("src", "./party-popper.svg");
+        newEl.classList.add("party");
+        containerEl.appendChild(newEl);
+
+        sentence.forEach((letter) => {
+          const letterEl = document.createElement("span");
+          letterEl.classList.add("letter");
+          letterEl.style.color = `rgb(${random()}, ${random()}, ${random()})`;
+          letterEl.textContent = letter;
+          containerEl.appendChild(letterEl);
+        });
+
+        newEl = document.createElement("img");
+        newEl.setAttribute("src", "./party-popper.svg");
+        containerEl.appendChild(newEl);
+        newEl.classList.add("party");
+      }, 3000);
+    </script>
+  </body>
+</html>

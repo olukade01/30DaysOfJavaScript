@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Projects</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      input {
+        width: 35rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        border-color: #e8e8e8;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+        outline-color: red;
+      }
+      button {
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.8rem 2.5rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+      }
+      div {
+        width: 35rem;
+        margin: auto;
+      }
+      p {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+      .required {
+        text-align: center;
+        color: red;
+        font-size: 1.5rem;
+      }
+      span {
+        color: orange;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: -1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Validating Web Forms</h1>
+    <p class="required"></p>
+    <div>
+      <p>First Name</p>
+      <input type="text" name="Firstname" />
+      <span></span>
+      <p>Last Name</p>
+      <input type="text" name="Lastname" />
+      <span></span>
+      <p>Email</p>
+      <input type="email" name="Email" />
+      <span></span>
+      <p>Password</p>
+      <input type="password" name="Password" />
+      <span></span>
+      <p>Telephone</p>
+      <input type="number" name="number" />
+      <span></span>
+      <p>Your bio</p>
+      <input type="text" name="bio" />
+      <span></span>
+      <button>Submit</button>
+    </div>
+    <script>
+      const inputEl = document.querySelectorAll("input");
+      const errorEl = document.querySelectorAll("span");
+      const requiredEl = document.querySelector(".required");
+      document.querySelector("button").addEventListener("click", (e) => {
+        inputEl.forEach((input, inputIndex) => {
+          if (
+            input.value &&
+            (input.name === "Firstname" || input.name === "Lastname") &&
+            !input.value.match(/^.[A-Za-z]{3,16}$/g)
+          ) {
+            errorEl[inputIndex].textContent =
+              "Name must be alphanumeric and contain 3 - 16 characters";
+          } else if (
+            input.value &&
+            input.name === "Email" &&
+            !input.value.match(
+              /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g
+            )
+          ) {
+            errorEl[inputIndex].textContent = "Email must be a valid address";
+          } else if (
+            input.value &&
+            input.name === "Password" &&
+            !input.value.match(/^.[a-zA-Z0-9@_-]{6,20}$/g)
+          ) {
+            errorEl[inputIndex].textContent =
+              "Password must be alphanumeric(@, _ and - are also allowed) and between 6 to 20 character";
+          } else if (
+            input.value &&
+            input.name === "number" &&
+            !input.value.match(/^(\d{11})$/g)
+          ) {
+            errorEl[inputIndex].textContent =
+              "A valid telephone number of numbers and 11 characters";
+          } else if (
+            input.value &&
+            input.name === "bio" &&
+            !input.value.match(/^.[a-z-_]{7,50}$/g)
+          ) {
+            errorEl[inputIndex].textContent =
+              "Bio must contain only lowercase letters, underscores, hyphens and be 8 to 50 characters";
+          }
+          setTimeout(() => {
+            errorEl[inputIndex].textContent = "";
+          }, 5000);
+          if (!input.value) {
+            requiredEl.textContent = "All fields required";
+            setTimeout(() => {
+              requiredEl.textContent = "";
+            }, 5000);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
