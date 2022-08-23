@@ -12,8 +12,8 @@ console.log(typeof city);
 console.log(typeof isMarried);
 console.log(typeof year);
 console.log(typeof age);
-console.log(typeof "10" === 10);
-console.log("9.8" === 10);
+console.log(typeof "10" === typeof 10);
+console.log(parseInt("9.8") === 10);
 let isTall = true,
   string = "are you there",
   numer = 221; // truthy
@@ -47,7 +47,7 @@ console.log(
 );
 console.log("python".length);
 console.log("jargon".length);
-console.log("python" === "jargon");
+console.log("python".length !== "jargon".length);
 4 > 3 && 10 < 12; // true
 4 > 3 && 10 > 12; // false
 4 > 3 || 10 < 12; // true
@@ -70,12 +70,12 @@ console.log(
   !(4 > 3 && 10 > 12),
   !(4 === "4")
 );
-console.log(!"python".includes("on") === "dragon".includes("on"));
+console.log(!("python".includes("on") && "dragon".includes("on")));
 let now = new Date();
 console.log(now.getFullYear());
-console.log(now.getMonth());
+console.log(now.getMonth() + 1);
 console.log(now.getDate());
-console.log(now.getDay());
+console.log(now.getDay() + 1);
 console.log(now.getHours());
 console.log(now.getMinutes());
 console.log(now.getTime());
@@ -131,6 +131,11 @@ if (yFirst === 0) {
   console.log("not equal");
 }
 
+// let hour = parseInt(prompt("hour"));
+// let ratePerHour = parseInt(prompt("rate per hour"));
+// let pay = hour * ratePerHour;
+// console.log(pay);
+
 let myName = "olukade";
 myName.length > 7
   ? console.log(`my name is long`)
@@ -154,10 +159,10 @@ let difference = myAge - yourAge;
 console.log(`I am ${difference} years older than you`);
 
 // let userYear = prompt("year you were born");
-// let currentYear = 2020;
+// let currentYear = new Date().getFullYear();
 // let stipulatedAge = 18;
 // let userAge = currentYear - userYear;
-// userYear < 2002
+// userAge > stipulatedAge
 //   ? console.log(`you are ${userAge}. you are old enough to drive`)
 //   : console.log(
 //       `you are ${userAge}. you will be allowed to drive after ${

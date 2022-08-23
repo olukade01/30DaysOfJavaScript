@@ -71,67 +71,67 @@ a > b
 //   console.log('not a month');
 // }
 
-let day = prompt("What is the day today?").toLowerCase();
-switch (day) {
-  case "saturday":
-  case "sunday":
-    console.log(`${day} is a weekend`);
-    break;
-  case "monday":
-  case "tuesday":
-  case "wednessday":
-  case "thursday":
-  case "friday":
-    console.log(`${day} is a working day`);
-    break;
-  default:
-    console.log("not a day");
-}
+// let day = prompt("What is the day today?").toLowerCase();
+// switch (day) {
+//   case "saturday":
+//   case "sunday":
+//     console.log(`${day} is a weekend`);
+//     break;
+//   case "monday":
+//   case "tuesday":
+//   case "wednessday":
+//   case "thursday":
+//   case "friday":
+//     console.log(`${day} is a working day`);
+//     break;
+//   default:
+//     console.log("not a day");
+// }
 
-let months = prompt("Enter a month").toLowerCase();
-switch (months) {
-  case "september":
-  case "april":
-  case "june":
-  case "november":
-    console.log(`${months} has 30 days`);
-    break;
-  case "january":
-  case "march":
-  case "may":
-  case "july":
-  case "august":
-  case "october":
-  case "december":
-    console.log(`${months} has 31 days`);
-    break;
-  case "february":
-    console.log("february has 28 days");
-    break;
-  default:
-    console.log("not a month");
-}
+// let months = prompt("Enter a month").toLowerCase();
+// switch (months) {
+//   case "september":
+//   case "april":
+//   case "june":
+//   case "november":
+//     console.log(`${months} has 30 days`);
+//     break;
+//   case "january":
+//   case "march":
+//   case "may":
+//   case "july":
+//   case "august":
+//   case "october":
+//   case "december":
+//     console.log(`${months} has 31 days`);
+//     break;
+//   case "february":
+//     console.log("february has 28 days");
+//     break;
+//   default:
+//     console.log("not a month");
+// }
 
-let leapYear = prompt("Enter a month").toLowerCase();
-switch (leapYear) {
-  case "september":
-  case "april":
-  case "june":
-  case "november":
-    console.log(`${leapYear} has 30 days`);
-    break;
-  case "january":
-  case "march":
-  case "may":
-  case "july":
-  case "august":
-  case "october":
-  case "december":
-    console.log(`${leapYear} has 31 days`);
-    break;
-  case "february":
-    console.log("february has 29 days");
-    break;
-  default:
-    console.log("not a month");
-}
+// let leapYear = prompt("Enter a month").toLowerCase();
+// switch (leapYear) {
+//   case "september":
+//   case "april":
+//   case "june":
+//   case "november":
+//     console.log(`${leapYear} has 30 days`);
+//     break;
+//   case "january":
+//   case "march":
+//   case "may":
+//   case "july":
+//   case "august":
+//   case "october":
+//   case "december":
+//     console.log(`${leapYear} has 31 days`);
+//     break;
+//   case "february":
+//     console.log("february has 29 days");
+//     break;
+//   default:
+//     console.log("not a month");
+// }

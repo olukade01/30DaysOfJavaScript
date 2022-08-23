@@ -1,19 +1,27 @@
 let myName = "muzzammil";
 let isMarried = true;
-let command
+let command;
 let octoberFirst = null;
 
-let myCountry
-let myState
-let myGender
-let myAge
+let yourCountry;
+let myState;
+let myGender;
+let ourAge;
 
-let myAge = 10, ourAge = 20, myCountry = "nigeria", myGender = "male";
+let myFirstName = "Olukade";
+let myLastName = "Muzzammil";
+let myMaritalStatus = "Single";
+let my_Age = 20;
+let myCountry = "Canada";
 
-let firstName = "olukade";
-let lastName = "muzamil";
-let maritalStatus = "single";
-let age = 02;
-let country = "canada";
+let firstName = "Olukade",
+  lastName = "Muzzammil",
+  maritalStatus = "Single",
+  age = 20,
+  country = "Canada";
 
-let firstName = "olukade", lastName = "muzamil", maritalStatus = "single", age = 02, country = "canada";
+let myAge = 25,
+  yourAge = 30;
+
+console.log("I am " + myAge + " years old.");
+console.log("You are " + yourAge + " years old.");
