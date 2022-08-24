@@ -1,18 +1,17 @@
-// let userAge = prompt('Enter your age');
+// let userAge = prompt("Enter your age");
 // let underAge = 18 - userAge;
-//   userAge > 18
+// userAge > 18
 //   ? console.log(`You are old enough to drive`)
 //   : console.log(`You are left with ${underAge} years to drive`);
 
-//   let yourAge = prompt('Enter your age');
-//   let myAge = 25;
-//   let ageDifference = yourAge - 25;
-//   if (myAge > yourAge) {
-//     console.log('I am older than you')
-//   }
-//   else {
-//     console.log(`You are ${ageDifference} years older than me`)
-//   }
+// let yourAge = prompt("Enter your age");
+// let myAge = 25;
+// let ageDifference = yourAge - myAge;
+// if (myAge > yourAge) {
+//   console.log(`I am ${myAge - yourAge} years older than you`);
+// } else {
+//   console.log(`You are ${ageDifference} years older than me`);
+// }
 
 let a = 4;
 let b = 3;
@@ -25,50 +24,43 @@ a > b
   ? console.log(`${a} is greater than ${b}`)
   : console.log(`${a} is less than ${b}`);
 
-// let number = +prompt('Enter a number');
+// let number = +prompt("Enter a number");
 // if (number % 2 == 0) {
-//   console.log(`${number} is an even number`)
-// }
-// else {
-//   console.log(`${number} is an odd number`)
+//   console.log(`${number} is an even number`);
+// } else {
+//   console.log(`${number} is an odd number`);
 // }
 
-// let score = parseInt(prompt('Enter your score'));
-// if (score == 0 || score <= 44) {
-//   console.log('F');
+// let score = parseInt(prompt("Enter your score"));
+// if (score <= 49) {
+//   console.log("F");
+// } else if (score <= 59) {
+//   console.log("D");
+// } else if (score <= 69) {
+//   console.log("C");
+// } else if (score <= 79) {
+//   console.log("B");
+// } else if (score <= 100) {
+//   console.log("A");
+// } else {
+//   console.log("no grade");
 // }
-// else if (score == 45 || score <= 49) {
-//   console.log('D');
-// }
-// else if (score == 50 || score <= 59) {
-//   console.log('C');
-// }
-// else if (score == 60 || score
-//   <= 69) {
-//   console.log('B');
-// }
-// else if (score == 70 || score <= 100) {
-//   console.log('A');
-// }
-// else {
-//   console.log('no grade');
-// };
 
-// let month = prompt('Enter month').toLowerCase();
-// if (month == 'september' || month == 'october' || month == 'november'){
+// let month = prompt("Enter month").toLowerCase();
+// if (month === "september" || month === "october" || month === "november") {
 //   console.log("Autumn");
-// }
-// else if (month == 'december' || month == 'january' || month == 'february'){
+// } else if (
+//   month === "december" ||
+//   month === "january" ||
+//   month === "february"
+// ) {
 //   console.log("Winter");
-// }
-// else if (month == 'march' || month == 'april' || month == 'may'){
+// } else if (month === "march" || month === "april" || month === "may") {
 //   console.log("Spring");
-// }
-// else if (month == 'june' || month == 'july' || month == 'august'){
+// } else if (month === "june" || month === "july" || month === "august") {
 //   console.log("Summer");
-// }
-// else {
-//   console.log('not a month');
+// } else {
+//   console.log("not a month");
 // }
 
 // let day = prompt("What is the day today?").toLowerCase();

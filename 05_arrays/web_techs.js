@@ -7,9 +7,9 @@ const webTechs = [
   "Node",
   "MongoDB",
 ];
-if (webTechs.includes("Sass")) {
-  console.log("Sass is a CSS preprocess");
-} else {
-  webTechs.push("Sass");
-  console.log(webTechs);
-}
+// if (webTechs.includes("Sass")) {
+//   console.log("Sass is a CSS preprocess");
+// } else {
+//   webTechs.push("Sass");
+//   console.log(webTechs);
+// }
