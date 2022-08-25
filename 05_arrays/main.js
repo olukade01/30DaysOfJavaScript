@@ -125,23 +125,30 @@ shoppingCart.unshift("Meat");
 console.log(shoppingCart);
 shoppingCart.push("Sugar");
 console.log(shoppingCart);
-shoppingCart.splice(4, 1);
+const honey = shoppingCart.indexOf("Honey");
+shoppingCart.splice(honey, 1);
 console.log(shoppingCart);
-shoppingCart[3] = "Green Tea";
-// console.log(shoppingCart);
+const tea = shoppingCart.indexOf("Tea");
+shoppingCart[tea] = "Green Tea";
+console.log(shoppingCart);
 
-// const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
-// const backEnd = ["Node", "Express", "MongoDB"];
-// const fullStack = frontEnd.concat(backEnd);
-// console.log(fullStack);
+const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
+const backEnd = ["Node", "Express", "MongoDB"];
+const fullStack = frontEnd.concat(backEnd);
+console.log(fullStack);
 
 // //excercise 3
-// const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
-// ages.sort();
-// // [19, 19, 20, 22, 24, 24, 24, 25, 25, 26]
-// min = ages[0];
-// max = ages[ages.length - 1];
-// console.log(`min = ${min} \nmax = ${max}`);
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+ages.sort();
+// [19, 19, 20, 22, 24, 24, 24, 25, 25, 26]
+let min = ages[0];
+let max = ages[ages.length - 1];
+console.log(`min = ${min} \nmax = ${max}`);
+
+let age = ages.length;
+const median =
+  age % 2 !== 0 ? ages[age - 1 / 2] : (ages[age / 2] + ages[age / 2 - 1]) / 2;
+console.log({ median });
 
 // let medianPosition = (ages.length + 1) / 2;
 // let median = ages[medianPosition - 1];
@@ -151,32 +158,31 @@ shoppingCart[3] = "Green Tea";
 //       ages[Math.ceil(medianPosition) - 1]) /
 //     2;
 // }
-// console.log({ median });
 
-// let average =
-//   (ages[0] +
-//     ages[1] +
-//     ages[2] +
-//     ages[3] +
-//     ages[4] +
-//     ages[5] +
-//     ages[6] +
-//     ages[7] +
-//     ages[8] +
-//     ages[9]) /
-//   10;
+let average =
+  (ages[0] +
+    ages[1] +
+    ages[2] +
+    ages[3] +
+    ages[4] +
+    ages[5] +
+    ages[6] +
+    ages[7] +
+    ages[8] +
+    ages[9]) /
+  age;
+console.log(average);
+// average = ages.reduce((acc, current) => acc + current) / age;
 // console.log(average);
-// average = ages.reduce((acc, current) => acc + current) / ages.length;
-// console.log(average);
-// range = max - min;
-// console.log(range);
+let range = max - min;
+console.log(range);
 
-// let minAverage = Math.abs(min - average);
-// let maxAverage = Math.abs(max - average);
-// if (minAverage == maxAverage) {
-//   console.log(`${minAverage} and ${maxAverage} are equal`);
-// } else if (maxAverage > minAverage) {
-//   console.log(`${maxAverage} is greater than ${minAverage}`);
-// } else {
-//   console.log(`${minAverage} is greater than ${maxAverage}`);
-// }
+let minAverage = Math.abs(min - average).toFixed(1);
+let maxAverage = Math.abs(max - average).toFixed(1);
+if (minAverage === maxAverage) {
+  console.log(`${minAverage} and ${maxAverage} are equal`);
+} else if (maxAverage > minAverage) {
+  console.log(`${maxAverage} is greater than ${minAverage}`);
+} else {
+  console.log(`${minAverage} is greater than ${maxAverage}`);
+}
