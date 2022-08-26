@@ -15,10 +15,10 @@
 // for (let i = 10; i >= 0; i--) {
 //   console.log(i);
 // }
-// let iii = 10;
-// while (iii >= 0) {
-//   console.log(iii);
-//   iii--;
+// let j = 10;
+// while (j >= 0) {
+//   console.log(j);
+//   j--;
 // }
 // let iv = 10;
 // do {
@@ -30,12 +30,16 @@
 //   console.log("#".repeat(i));
 // }
 
-for (let i = 0; i <= 10; i++) {
-  console.log(`${i} x ${i} = ${i * i}`);
-}
-for (let i = 0; i <= 10; i++) {
-  console.log(`${i}  ${i * i}  ${i * i * i}`);
-}
+// for (let i = 0; i <= 10; i++) {
+//   console.log(`${i} x ${i} = ${i * i}`);
+// }
+
+// for (let i = 0; i <= 10; i++) {
+//   if (i === 0) {
+//     console.log("i\ti^2\ti^3");
+//   }
+//   console.log(`${i}\t${i * i}\t${i * i * i}`);
+// }
 
 // for (let i = 0; i <= 100; i++) {
 //   if (i % 2 == 0) {
@@ -59,6 +63,7 @@ for (let i = 0; i <= 10; i++) {
 //   }
 //   return prime;
 // }
+
 // for (let i = 0; i <= 100; i++) {
 //   if (isPrime(i)) {
 //     console.log(i);
@@ -71,82 +76,82 @@ for (let i = 0; i <= 10; i++) {
 // }
 // console.log(`The sum of all numbers from 0 to 100 is ${sum}`);
 
-// let som = 0;
-// let summ = 0;
-// let array = [];
+// let even = 0;
+// let odd = 0;
+// let arr = [];
 // for (let i = 0; i <= 100; i++) {
-//   if (i % 2 == 1) {
-//     som += i;
-//   } else if (i % 2 == 0) {
-//     summ += i;
+//   if (i % 2 == 0) {
+//     even += i;
+//   }
+//   if (i % 2 != 0) {
+//     odd += i;
 //   }
 // }
 // console.log(
-//   ` The sum of all evens from 0 to 100 is ${summ}. And the sum of all odds from 0 to 100 is  ${som}`
+//   `The sum of all evens from 0 to 100 is ${even}. And the sum of all odds from 0 to 100 is ${odd}`
 // );
-// array.push(summ, som);
-// console.log(array);
+// arr.push(even, odd);
+// console.log(arr);
 
 // let arr = [];
 // for (let i = 0; i < 5; i++) {
-//   let random = Math.floor(Math.random() * 10);
+//   let random = Math.ceil(Math.random() * 10);
 //   arr.push(random);
 // }
 // console.log(arr);
 
-let uniqueArray = [];
-for (let i = 0; uniqueArray.length < 5; i++) {
-  let random = Math.floor(Math.random() * 10);
-  if (uniqueArray.indexOf(random) === -1) uniqueArray.push(random);
-}
-console.log(uniqueArray);
+// let uniqueArray = [];
+// for (let i = 0; uniqueArray.length < 5; i++) {
+//   let random = Math.floor(Math.random() * 11);
+//   if (uniqueArray.indexOf(random) === -1) uniqueArray.push(random);
+// }
+// console.log(uniqueArray);
 
-let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-let chars = "";
-for (let i = 0; i < 6; i++) {
-  let randomNo = Math.floor(Math.random() * char.length);
-  chars += char[randomNo];
-}
-console.log(chars);
+// let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+// let chars = "";
+// for (let i = 0; i < 6; i++) {
+//   let randomNo = Math.floor(Math.random() * char.length);
+//   chars += char[randomNo];
+// }
+// console.log(chars);
 
-// exercise 2
+// // exercise 2
 
-function generateChars(n = 15) {
-  let chars = "";
-  for (let i = 0; i < n; i++) {
-    const randomNo = Math.floor(Math.random() * char.length);
-    chars += char[randomNo];
-  }
-  return chars;
-}
-console.log(generateChars());
+// function generateChars(n) {
+//   let chars = "";
+//   for (let i = 0; i < n; i++) {
+//     const randomNo = Math.floor(Math.random() * char.length);
+//     chars += char[randomNo];
+//   }
+//   return chars;
+// }
+// console.log(generateChars(15));
 
-let hexChar = "0a1b2c3d4e5f6789";
-let symbol = "#";
-for (let i = 0; i < 6; i++) {
-  let randomNo = Math.floor(Math.random() * hexChar.length);
-  symbol += hexChar[randomNo];
-}
-console.log(symbol);
+// let hexChar = "0a1b2c3d4e5f6789";
+// let symbol = "#";
+// for (let i = 0; i < 6; i++) {
+//   let randomNo = Math.floor(Math.random() * hexChar.length);
+//   symbol += hexChar[randomNo];
+// }
+// console.log(symbol);
 
-const randomBetween = (min, max) =>
-  min + Math.floor(Math.random() * (max - min + 1));
-const r = randomBetween(0, 255);
-const g = randomBetween(0, 255);
-const bb = randomBetween(0, 255);
-const rgb = `rgb(${r},${g},${bb})`;
-console.log(rgb);
+// let r = "rgb(";
+// for (let i = 0; i < 3; i++) {
+//   let rand = Math.floor(Math.random() * 256);
+//   r = i === 2 ? r + `${rand})` : r + `${rand},`;
+// }
+// console.log(r);
 
-let ar = "rgb(";
-let closeB = ")";
-let comma = ",";
-for (let i = 0; i < 3; i++) {
-  let roundOff = Math.floor(Math.random() * 256);
-  ar = ar + comma + roundOff;
-}
-let replace = ar.replace(",", "");
-replace = replace + closeB;
-console.log(replace);
+// let ar = "rgb(";
+// let closeB = ")";
+// let comma = ",";
+// for (let i = 0; i < 3; i++) {
+//   let roundOff = Math.floor(Math.random() * 256);
+//   ar = ar + comma + roundOff;
+// }
+// let replace = ar.replace(",", "");
+// replace = replace + closeB;
+// console.log(replace);
 
 const countries = [
   "Albania",
@@ -161,19 +166,20 @@ const countries = [
   "Japan",
   "Kenya",
 ];
+
 let arra = [];
 for (let i = 0; i < countries.length; i++) {
   arra.push(countries[i].toUpperCase());
 }
 console.log(arra);
 
-newArray = [];
+let newArrayy = [];
 for (const country of countries) {
-  newArray.push(country.length);
+  newArrayy.push(country.length);
 }
-console.log(newArray);
+console.log(newArrayy);
 
-newArray = [];
+let newArray = [];
 for (const country of countries) {
   newArray.push([country, country.slice(0, 3).toUpperCase(), country.length]);
 }
@@ -211,7 +217,7 @@ for (let i = 0; i < countries.length; i++) {
 }
 console.log(word);
 
-emptyA = [];
+let emptyA = [];
 for (const country of countries) {
   if (country.length === 5) {
     emptyA.push(country);
@@ -276,6 +282,11 @@ const fullStack = [
   ["Node", "Express", "MongoDB"],
 ];
 console.log(fullStack.join(",").toUpperCase().replaceAll(",", " "));
+for (const stack of fullStack) {
+  for (const one of stack) {
+    console.log(one.toUpperCase());
+  }
+}
 
 // 3
 
@@ -299,7 +310,7 @@ console.log(mernStack.sort());
 
 let four = [];
 for (const country of countries) {
-  if (country.length == 4) {
+  if (country.length === 4) {
     four.push(country);
   }
 }
