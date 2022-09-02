@@ -1,146 +1,146 @@
-// for (let i = 0; i <= 10; i++) {
-//   console.log(i);
-// }
-// let i = 0;
-// while (i <= 10) {
-//   console.log(i);
-//   i++;
-// }
-// let ii = 0;
-// do {
-//   console.log(ii);
-//   ii++;
-// } while (ii <= 10);
+for (let i = 0; i <= 10; i++) {
+  console.log(i);
+}
+let i = 0;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+let ii = 0;
+do {
+  console.log(ii);
+  ii++;
+} while (ii <= 10);
 
-// for (let i = 10; i >= 0; i--) {
-//   console.log(i);
-// }
-// let j = 10;
-// while (j >= 0) {
-//   console.log(j);
-//   j--;
-// }
-// let iv = 10;
-// do {
-//   console.log(iv);
-//   iv--;
-// } while (iv >= 0);
+for (let i = 10; i >= 0; i--) {
+  console.log(i);
+}
+let j = 10;
+while (j >= 0) {
+  console.log(j);
+  j--;
+}
+let iv = 10;
+do {
+  console.log(iv);
+  iv--;
+} while (iv >= 0);
 
-// for (let i = 1; i <= 7; i++) {
-//   console.log("#".repeat(i));
-// }
+for (let i = 1; i <= 7; i++) {
+  console.log("#".repeat(i));
+}
 
-// for (let i = 0; i <= 10; i++) {
-//   console.log(`${i} x ${i} = ${i * i}`);
-// }
+for (let i = 0; i <= 10; i++) {
+  console.log(`${i} x ${i} = ${i * i}`);
+}
 
-// for (let i = 0; i <= 10; i++) {
-//   if (i === 0) {
-//     console.log("i\ti^2\ti^3");
-//   }
-//   console.log(`${i}\t${i * i}\t${i * i * i}`);
-// }
+for (let i = 0; i <= 10; i++) {
+  if (i === 0) {
+    console.log("i\ti^2\ti^3");
+  }
+  console.log(`${i}\t${i * i}\t${i * i * i}`);
+}
 
-// for (let i = 0; i <= 100; i++) {
-//   if (i % 2 == 0) {
-//     console.log(i);
-//   }
-// }
-// for (let i = 0; i <= 100; i++) {
-//   if (i % 2 == 1) {
-//     console.log(i);
-//   }
-// }
+for (let i = 0; i <= 100; i++) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+}
+for (let i = 0; i <= 100; i++) {
+  if (i % 2 == 1) {
+    console.log(i);
+  }
+}
 
-// function isPrime(n) {
-//   if (!n) return false;
-//   let prime = true;
-//   for (let i = 2; i < n; i++) {
-//     if (n % i === 0) {
-//       prime = false;
-//       break;
-//     }
-//   }
-//   return prime;
-// }
+function isPrime(n) {
+  if (!n) return false;
+  let prime = true;
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      prime = false;
+      break;
+    }
+  }
+  return prime;
+}
 
-// for (let i = 0; i <= 100; i++) {
-//   if (isPrime(i)) {
-//     console.log(i);
-//   }
-// }
+for (let i = 0; i <= 100; i++) {
+  if (isPrime(i)) {
+    console.log(i);
+  }
+}
 
-// let sum = 0;
-// for (let i = 0; i <= 100; i++) {
-//   sum += i;
-// }
-// console.log(`The sum of all numbers from 0 to 100 is ${sum}`);
+let sum = 0;
+for (let i = 0; i <= 100; i++) {
+  sum += i;
+}
+console.log(`The sum of all numbers from 0 to 100 is ${sum}`);
 
-// let even = 0;
-// let odd = 0;
-// let arr = [];
-// for (let i = 0; i <= 100; i++) {
-//   if (i % 2 == 0) {
-//     even += i;
-//   }
-//   if (i % 2 != 0) {
-//     odd += i;
-//   }
-// }
-// console.log(
-//   `The sum of all evens from 0 to 100 is ${even}. And the sum of all odds from 0 to 100 is ${odd}`
-// );
-// arr.push(even, odd);
-// console.log(arr);
+let even = 0;
+let odd = 0;
+let arr = [];
+for (let i = 0; i <= 100; i++) {
+  if (i % 2 == 0) {
+    even += i;
+  }
+  if (i % 2 != 0) {
+    odd += i;
+  }
+}
+console.log(
+  `The sum of all evens from 0 to 100 is ${even}. And the sum of all odds from 0 to 100 is ${odd}`
+);
+arr.push(even, odd);
+console.log(arr);
 
-// let arr = [];
-// for (let i = 0; i < 5; i++) {
-//   let random = Math.ceil(Math.random() * 10);
-//   arr.push(random);
-// }
-// console.log(arr);
+let nArr = [];
+for (let i = 0; i < 5; i++) {
+  let random = Math.ceil(Math.random() * 10);
+  nArr.push(random);
+}
+console.log(nArr);
 
-// let uniqueArray = [];
-// for (let i = 0; uniqueArray.length < 5; i++) {
-//   let random = Math.floor(Math.random() * 11);
-//   if (uniqueArray.indexOf(random) === -1) uniqueArray.push(random);
-// }
-// console.log(uniqueArray);
+let uniqueArray = [];
+for (let i = 0; uniqueArray.length < 5; i++) {
+  let random = Math.floor(Math.random() * 11);
+  if (uniqueArray.indexOf(random) === -1) uniqueArray.push(random);
+}
+console.log(uniqueArray);
 
-// let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-// let chars = "";
-// for (let i = 0; i < 6; i++) {
-//   let randomNo = Math.floor(Math.random() * char.length);
-//   chars += char[randomNo];
-// }
-// console.log(chars);
+let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+let charss = "";
+for (let i = 0; i < 6; i++) {
+  let randomNo = Math.floor(Math.random() * char.length);
+  charss += char[randomNo];
+}
+console.log(charss);
 
 // // exercise 2
 
-// function generateChars(n) {
-//   let chars = "";
-//   for (let i = 0; i < n; i++) {
-//     const randomNo = Math.floor(Math.random() * char.length);
-//     chars += char[randomNo];
-//   }
-//   return chars;
-// }
-// console.log(generateChars(15));
+function generateChars(n) {
+  let chars = "";
+  for (let i = 0; i < n; i++) {
+    const randomNo = Math.floor(Math.random() * char.length);
+    chars += char[randomNo];
+  }
+  return chars;
+}
+console.log(generateChars(15));
 
-// let hexChar = "0a1b2c3d4e5f6789";
-// let symbol = "#";
-// for (let i = 0; i < 6; i++) {
-//   let randomNo = Math.floor(Math.random() * hexChar.length);
-//   symbol += hexChar[randomNo];
-// }
-// console.log(symbol);
+let hexChar = "0a1b2c3d4e5f6789";
+let symbol = "#";
+for (let i = 0; i < 6; i++) {
+  let randomNo = Math.floor(Math.random() * hexChar.length);
+  symbol += hexChar[randomNo];
+}
+console.log(symbol);
 
-// let r = "rgb(";
-// for (let i = 0; i < 3; i++) {
-//   let rand = Math.floor(Math.random() * 256);
-//   r = i === 2 ? r + `${rand})` : r + `${rand},`;
-// }
-// console.log(r);
+let r = "rgb(";
+for (let i = 0; i < 3; i++) {
+  let rand = Math.floor(Math.random() * 256);
+  r = i === 2 ? r + `${rand})` : r + `${rand},`;
+}
+console.log(r);
 
 // let ar = "rgb(";
 // let closeB = ")";
@@ -270,12 +270,12 @@ for (i = 0; i < newTechs.length; i++) {
   console.log(newTechs[i]);
 }
 
-let arr = [];
+let arrayy = [];
 let fruits = ["banana", "orange", "mango", "lemon"];
 for (i = fruits.length - 1; i >= 0; i--) {
-  arr.push(fruits[i]);
+  arrayy.push(fruits[i]);
 }
-console.log(arr);
+console.log(arrayy);
 
 const fullStack = [
   ["HTML", "CSS", "JS", "React"],
@@ -290,20 +290,9 @@ for (const stack of fullStack) {
 
 // 3
 
-// const countries = [
-//   "Albania",
-//   "Bolivia",
-//   "Canada",
-//   "Denmark",
-//   "Ethiopia",
-//   "Finland",
-//   "Germany",
-//   "Hungary",
-//   "Ireland",
-//   "Japan",
-//   "Kenya",
-// ];
-sortedCountries = countries.sort();
+const newCountries = countries.slice(0);
+console.log(newCountries);
+sortedCountries = newCountries.sort();
 console.log(sortedCountries);
 console.log(webTechs.sort());
 console.log(mernStack.sort());
@@ -320,7 +309,7 @@ if (four.length > 0) {
   console.log("no country contain four characters");
 }
 
-a = [];
+let a = [];
 for (const country of countries) {
   if (country.length >= 2) {
     a.push(country);
@@ -330,8 +319,14 @@ for (const country of countries) {
 }
 console.log(a);
 
-let b = [];
-for (let i = 0; i < countries.length; i++) {
-  b.push(countries[i].toUpperCase());
+// let b = [];
+// for (let i = 0; i < countries.length; i++) {
+//   b.push(countries[i].toUpperCase());
+// }
+// console.log(b.reverse());
+
+const reversedCountries = [];
+for (let i = countries.length - 1; i >= 0; i--) {
+  reversedCountries.push(countries[i].toUpperCase());
 }
-console.log(b.reverse());
+console.log(reversedCountries);

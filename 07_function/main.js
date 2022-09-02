@@ -7,122 +7,143 @@
 // }
 // fullName();
 
-// function fullName(firstName, lastName) {
-//   return `${firstName} ${lastName}`;
-// }
-// console.log(fullName("Olukade", "Muzzammil"));
+function fullName(firstName, lastName) {
+  const fullName = `${firstName} ${lastName}`;
+  return fullName;
+}
+console.log(fullName("Olukade", "Muzzammil"));
 
-// function addNumbers(numOne, numTwo) {
-//   let sum = numOne + numTwo;
-//   return sum;
-// }
-// console.log(addNumbers(2, 5));
+function addNumbers(numOne, numTwo) {
+  let sum = numOne + numTwo;
+  return sum;
+}
+console.log(addNumbers(12, 5));
 
-// function areaOfRectangle(length, width) {
-//   let area = length * width;
-//   return area;
-// }
-// console.log(areaOfRectangle(5, 5));
+function areaOfRectangle(length, width) {
+  let area = length * width;
+  return area;
+}
+console.log(areaOfRectangle(5, 5));
 
-// function perimeterOfRectangle(length, width) {
-//   let perimeter = 2 * (length + width);
-//   return perimeter;
-// }
-// console.log(perimeterOfRectangle(5, 5));
+function perimeterOfRectangle(length, width) {
+  let perimeter = 2 * (length + width);
+  return perimeter;
+}
+console.log(perimeterOfRectangle(5, 5));
 
-// function volumeOfRectPrism(length, width, height) {
-//   let volume = length * width * height;
-//   return volume;
-// }
-// console.log(volumeOfRectPrism(5, 5, 2));
+function volumeOfRectPrism(length, width, height) {
+  let volume = length * width * height;
+  return volume;
+}
+console.log(volumeOfRectPrism(5, 5, 2));
 
-// function areaOfCircle(r) {
-//   let area = Math.PI * r * r;
-//   return area;
-// }
-// console.log(areaOfCircle(10));
+function areaOfCircle(r) {
+  let area = Math.PI * r * r;
+  return area.toFixed();
+}
+console.log(areaOfCircle(10));
 
-// function circumOfCircle(r) {
-//   let circum = 2 * Math.PI * r;
-//   return circum;
-// }
-// console.log(circumOfCircle(10));
+function circumOfCircle(r) {
+  let circum = 2 * Math.PI * r;
+  return circum.toFixed(2);
+}
+console.log(circumOfCircle(10));
 
-// function density(mass, volume) {
-//   let density = mass / volume;
-//   return density;
-// }
-// console.log(density(10, 2));
+function density(mass, volume) {
+  let density = mass / volume;
+  return density;
+}
+console.log(density(10, 2));
 
-// function speed(distance, time) {
-//   let speed = distance / time;
-//   return speed;
-// }
-// console.log(speed(10, 2));
+function speed(distance, time) {
+  let speed = distance / time;
+  return speed;
+}
+console.log(speed(10, 2));
 
-// function weight(mass, gravity) {
-//   let weight = mass * gravity;
-//   return weight;
-// }
-// console.log(weight(5, 10));
+function weight(mass, gravity) {
+  let weight = mass * gravity;
+  return weight;
+}
+console.log(weight(5, 10));
 
-// function convertCelciusToFahrenheit(oC) {
-//   let oF = (oC * 9) / 5 + 32;
-//   return oF;
-// }
-// console.log(convertCelciusToFahrenheit(5));
+function convertCelciusToFahrenheit(oC) {
+  let oF = (oC * 9) / 5 + 32;
+  return oF;
+}
+console.log(convertCelciusToFahrenheit(5));
 
 // function bmi(weight, height) {
 //   let bmi = weight / (height * height);
 //   if (bmi < 18.5) {
-//     return "underweight";
+//     return `${bmi}: underweight`;
 //   } else if (bmi >= 18.5 && bmi <= 24.9) {
-//     return "normal weight";
+//     return `${bmi}: normal weight`;
 //   } else if (bmi >= 25 && bmi <= 29.9) {
-//     return "overweight";
+//     return `${bmi}: overweight`;
 //   } else if (bmi >= 30) {
-//     return "obese";
+//     return `${bmi}: obese`;
 //   }
 // }
-// console.log(bmi(70, 1.75));
+// console.log(bmi(80, 1.55));
 
-// function checkSeason(month) {
-//   switch (month) {
-//     case "january":
-//     case "february":
-//     case "march":
-//       return "winter";
-//     case "april":
-//     case "may":
-//     case "june":
-//       return "spring";
-//     case "july":
-//     case "august":
-//     case "september":
-//       return "summer";
-//     case "october":
-//     case "november":
-//     case "december":
-//       return "autumn";
-//     default:
-//       "not a month or try lower case";
-//   }
-// }
-// console.log(checkSeason("july"));
+const bmI = (weight, height) => {
+  let bmi = weight / (height * height);
+  return bmi < 18.5
+    ? `${bmi}: underweight`
+    : bmi < 24.9
+    ? `${bmi}: normal weight`
+    : bmi < 29.9
+    ? `${bmi}: overweight`
+    : `${bmi}: obese`;
+};
+console.log(bmI(67, 1.75));
 
-// const findMax = (...args) => {
-//   maxNum = -Infinity;
-//   for (let i = 0; i < args.length; i++) {
-//     if (args[i] > maxNum) {
-//       maxNum = args[i];
-//     }
-//   }
-//   return maxNum;
-// };
-// console.log(findMax(0, 10, 5));
-// console.log(findMax(0, -10, -2));
+function checkSeason(month) {
+  switch (month.toLowerCase()) {
+    case "january":
+    case "february":
+    case "march":
+      return "winter";
+    case "april":
+    case "may":
+    case "june":
+      return "spring";
+    case "july":
+    case "august":
+    case "september":
+      return "summer";
+    case "october":
+    case "november":
+    case "december":
+      return "autumn";
+    default:
+      return "Not a month";
+  }
+}
+console.log(checkSeason("november"));
+
+const findMax = (...args) => {
+  maxNum = -Infinity;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] > maxNum) {
+      maxNum = args[i];
+    }
+  }
+  return maxNum;
+};
+console.log(findMax(0, 10, 5));
+console.log(findMax(0, -10, -2));
+
+const max = (...args) => {
+  args.sort((a, b) => a - b);
+  return args[args.length - 1];
+};
+console.log(max(0, 10, 5));
+console.log(max(0, -10, -2));
 
 // exercise 2
+
 function printArray(numbers) {
   let value = "";
   for (let i = 0; i < numbers.length; i++) {
