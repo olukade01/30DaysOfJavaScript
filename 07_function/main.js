@@ -155,23 +155,34 @@ console.log(printArray([1, 2, 3, "muzzammil", true].join(" ")));
 
 function showDateTime() {
   const now = new Date();
-  return `${now.getDate() < 10 ? `0${now.getDate()}` : now.getDate()}/${
-    now.getMonth() + 1 < 10 ? `0${now.getMonth() + 1}` : now.getMonth() + 1
-  }/${now.getFullYear()} ${
-    now.getHours() < 10 ? `0${now.getHours()}` : now.getHours()
-  }:${now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes()}`;
+  console.log(
+    `${now.getDate() < 10 ? `0${now.getDate()}` : now.getDate()}/${
+      now.getMonth() + 1 < 10 ? `0${now.getMonth() + 1}` : now.getMonth() + 1
+    }/${now.getFullYear()} ${
+      now.getHours() < 10 ? `0${now.getHours()}` : now.getHours()
+    }:${now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes()}`
+  );
 }
-console.log(showDateTime());
+showDateTime();
 
-// function swapValues(x, y) {
-//   return `x => ${y}, y => ${x}`;
-// }
-// console.log(swapValues(10, 20));
+function swapValues(x, y) {
+  return `x => ${y}, y => ${x}`;
+}
+console.log(swapValues(10, 20));
 
 function reverseArray(arr) {
-  return arr.reverse();
+  let array = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    array.push(arr[i]);
+  }
+  return array;
 }
 console.log(reverseArray(["A", "B", "C", "D"]));
+
+// function reverseArray(arr) {
+//   return arr.reverse();
+// }
+// console.log(reverseArray(["A", "B", "C", "D"]));
 
 let countries = ["Angola", "Bahrain", "Colombia", "Denmark"];
 function capitalizeArray(arr) {
@@ -183,11 +194,18 @@ function capitalizeArray(arr) {
 }
 console.log(capitalizeArray(countries));
 
-function removeItem(index) {
-  for (let i = 0; i < index.length; i++) {
-    index.splice(0, 1);
-    return countries;
+function addItem(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
   }
+  return [sum];
+}
+console.log(addItem([1, 2, 3, 4, 5, 25]));
+
+function removeItem(index) {
+  index.splice(0, 1);
+  return index;
 }
 console.log(removeItem(countries));
 
@@ -234,13 +252,10 @@ function evensAndOdds(number) {
   let array = [];
   let arr = [];
   for (let i = 0; i <= number; i++) {
-    if ([i] % 2 === 0) {
-      array.push([i]);
-    }
-  }
-  for (let i = 0; i <= number; i++) {
-    if ([i] % 2 !== 0) {
-      arr.push([i]);
+    if (i % 2 === 0) {
+      array.push(i);
+    } else {
+      arr.push(i);
     }
   }
   return `The number of odds are ${arr.length}\nThe number of evens are ${array.length} `;
@@ -268,18 +283,36 @@ function randomUserIp() {
 }
 console.log(randomUserIp());
 
+// const ip = () => {
+//   let rand = () => Math.floor(Math.random() * 256)
+//   return `${rand()}.${rand()}.${rand()}.${rand()}`
+// }
+// console.log(ip())
+
+let macAddress = "0a1b2c3d4e5f6789";
 function randomMacAddress() {
-  let macAddress = "0a1b2c3d4e5f6789";
-  let macAddress2 = "0a1b2c3d4e5f6789";
   let user = "";
   for (let i = 0; i < 6; i++) {
-    let randomNo = Math.floor(Math.random() * macAddress.length);
-    let randomNo2 = Math.floor(Math.random() * macAddress2.length);
-    user += ":" + macAddress[randomNo] + macAddress2[randomNo2];
+    let randomNo = () => Math.floor(Math.random() * macAddress.length);
+    user += ":" + macAddress[randomNo()] + macAddress[randomNo()];
   }
   return user.replace(":", "");
 }
 console.log(randomMacAddress());
+
+// const mac = () => {
+//   let id = "";
+//   for (let i = 0; i < 12; i++) {
+//     let rand = Math.floor(Math.random() * macAddress.length);
+//     i % 2 === 0
+//       ? (id += macAddress[rand])
+//       : i === 11
+//       ? (id += macAddress[rand])
+//       : (id = `${id + macAddress[rand]}:`);
+//   }
+//   return id;
+// };
+// console.log(mac());
 
 function randomHexaNumberGenerator() {
   let hexChar = "0a1b2c3d4e5f6789";
@@ -303,6 +336,26 @@ function userIdGenerator() {
 }
 console.log(userIdGenerator());
 
+// exercise 3
+
+// function userIdGenerator() {
+//   const id = +prompt("enter number of times");
+//   const ch = +prompt("enter number of chars");
+//   let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+//   let he = "";
+//   let chars = "";
+//   for (let j = 0; j < id; j++) {
+//     for (let i = 0; i < ch; i++) {
+//       let randomNo = Math.floor(Math.random() * char.length);
+//       chars += char[randomNo];
+//     }
+//     he += `${chars}\n`;
+//     chars = "";
+//   }
+//   return he;
+// }
+// console.log(userIdGenerator());
+
 // function userIdGeneratedByUser(input1, input2) {
 //   let char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 //   let arr = [];
@@ -324,20 +377,15 @@ console.log(userIdGenerator());
 // );
 
 function rgbColorGenerator() {
-  const randomBetween = (min, max) =>
-    min + Math.floor(Math.random() * (max - min + 1));
-  const r = randomBetween(0, 255);
-  const g = randomBetween(0, 255);
-  const bb = randomBetween(0, 255);
-  const rgb = `rgb(${r},${g},${bb})`;
-  return rgb;
+  const random = () => Math.floor(Math.random() * 256);
+  return `rgb(${random()},${random()},${random()})`;
 }
 console.log(rgbColorGenerator());
 
-function arrayOfHexaColors() {
+function arrayOfHexaColors(times) {
   let array = [];
   let hexChar = "0a1b2c3d4e5f6789";
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < times; i++) {
     let symbol = "#";
     for (let i = 0; i < 6; i++) {
       let random = Math.floor(Math.random() * hexChar.length);
@@ -347,49 +395,40 @@ function arrayOfHexaColors() {
   }
   return array;
 }
-console.log(arrayOfHexaColors());
+console.log(arrayOfHexaColors(4));
 
-// function arrayOfRgbColors() {
-//   let array = [];
-//   for (i = 0; i < 4; i++) {
-//     const randomBetween = (min, max) =>
-//       min + Math.floor(Math.random() * (max - min + 1));
-//     const r = randomBetween(0, 255);
-//     const g = randomBetween(0, 255);
-//     const bb = randomBetween(0, 255);
-//     const rgb = `rgb(${r},${g},${bb})`;
-//     array.push(rgb);
-//   }
-//   return array;
-// }
-// console.log(arrayOfRgbColors());
-
-function generateColors(color, number) {
+function arrayOfRgbColors(times) {
   let array = [];
-  let hexChar = "0a1b2c3d4e5f6789";
-  if (color === "rgb") {
-    for (i = 0; i < number; i++) {
-      const randomBetween = (min, max) =>
-        min + Math.floor(Math.random() * (max - min + 1));
-      const r = randomBetween(0, 255);
-      const g = randomBetween(0, 255);
-      const bb = randomBetween(0, 255);
-      const rgb = `rgb(${r},${g},${bb})`;
-      array.push(rgb);
-    }
-  } else if (color === "hex") {
-    for (let i = 0; i < number; i++) {
-      let symbol = "#";
-      for (let i = 0; i < 6; i++) {
-        let random = Math.floor(Math.random() * hexChar.length);
-        symbol += hexChar[random];
-      }
-      array.push(symbol);
-    }
+  for (let j = 0; j < times; j++) {
+    const random = () => Math.floor(Math.random() * 256);
+    const rgb = `rgb(${random()},${random()},${random()})`;
+    array.push(rgb);
   }
   return array;
 }
-console.log(generateColors("hex", 3));
+console.log(arrayOfRgbColors(6));
+
+function generateColors(color, number) {
+  let array = [];
+  for (let j = 0; j < number; j++) {
+    if (color === "hex") {
+      let char = "abcdef1234567890";
+      let chars = "#";
+      for (let i = 0; i < 6; i++) {
+        let randomNo = Math.floor(Math.random() * char.length);
+        chars += char[randomNo];
+      }
+      array.push(chars);
+    }
+    if (color === "rgb") {
+      const random = () => Math.floor(Math.random() * 256);
+      const rgb = `rgb(${random()},${random()},${random()})`;
+      array.push(rgb);
+    }
+  }
+  return number === 1 ? array.join() : array;
+}
+console.log(generateColors("hex", 4));
 
 function factorial(integer) {
   let factorial = 1;
@@ -398,7 +437,10 @@ function factorial(integer) {
   }
   return factorial;
 }
-console.log(factorial(5));
+console.log(factorial(1));
+
+const isEmpty = (name) => (name.length === 0 ? "Its Empty" : "Not Empty");
+console.log(isEmpty(0));
 
 const sum = (...args) => {
   let sum = 0;
@@ -409,16 +451,19 @@ const sum = (...args) => {
 };
 console.log(sum(1, 2, 3, 4, 5, 6));
 
-function isEmpty(name) {
-  if (name.length === 0) {
-    return "its empty";
-  } else {
-    return `not empty`;
-  }
-}
-console.log(isEmpty("ol7u"));
+// const sumOfItems = (arr) => {
+//   let sum = 0;
+//   for (const element of arr) {
+//     if (typeof element === 'number') {
+//       sum += element;
+//     } else {
+//       sum = "every item of the array must be a number";
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumOfItems([1, 2, 3, 4, 5]));
 
-const items = [2, 3, 5, 4, 7, 7, 6];
 function sumOfArrayItems(items) {
   if (!items.every((value) => typeof value === "number")) {
     return Error("every item of the array must be a number");
@@ -427,6 +472,7 @@ function sumOfArrayItems(items) {
 }
 console.log(sumOfArrayItems([1, 2, 3, "heyy"]));
 
+const items = [2, 3, 5, 4, 7, 7, 6];
 function average(item) {
   if (!item.every((value) => typeof value === "number")) {
     return Error("every item of the array must be a number");
@@ -439,8 +485,7 @@ function modifyArray(array) {
   if (array.length < 5) {
     return "item not found";
   }
-  cap = array[4].toUpperCase();
-  array.splice(4, 1, cap);
+  array[4] = array[4].toUpperCase();
   return array;
 }
 console.log(
