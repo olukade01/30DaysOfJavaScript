@@ -503,57 +503,88 @@ function isPrime(n) {
   }
   return prime;
 }
-console.log(isPrime(97));
+console.log(isPrime(9));
 
-let nil = ["Avocado", "Tomato", "Potato", "Mango", "Lemon", "Carrot"];
-function uniqueArray(array) {
-  let result = "unique array";
-  for (i = 0; i < array.length; i++) {
-    let arrayCount = 0;
-    for (j = 0; j < array.length; j++) {
-      if (array[i] === array[j]) arrayCount++;
-    }
-    if (arrayCount > 1) {
-      result = "not unique";
-    }
-  }
-  return result;
-}
-console.log(uniqueArray(nil));
+// let nil = ["Avocado", "Tomato", "Potato", "Mango", "Lemon", "Carrot"];
+// function uniqueArray(array) {
+//   let result = "unique array";
+//   for (i = 0; i < array.length; i++) {
+//     let arrayCount = 0;
+//     for (j = 0; j < array.length; j++) {
+//       if (array[i] === array[j]) arrayCount++;
+//     }
+//     if (arrayCount > 1) {
+//       result = "not unique";
+//     }
+//   }
+//   return result;
+// }
+// console.log(uniqueArray(nil));
 
-function arrayDataTypes(array) {
-  let arrayOfdata = ["number", "string", "undefined", "null", "boolean"];
-  let empt = [];
-  for (let i = 0; i < arrayOfdata.length; i++) {
-    if (!array.every((value) => typeof value === arrayOfdata[i])) {
-      empt.push(arrayOfdata[i]);
+const uniqueArray = (arr) => {
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (array.includes(arr[i])) {
+      break;
+    } else {
+      array.push(arr[i]);
     }
   }
-  if (empt.length == arrayOfdata.length) {
-    return "Array is not containing the same data type";
-  } else {
-    return "Array is containing same data type";
+  return array.length === arr.length ? "unique array" : "not unique";
+};
+console.log(uniqueArray(["Google", 7, true, "Apple", "Amazon", 9, 9]));
+
+// function arrayDataTypes(array) {
+//   let arrayOfdata = ["number", "string", "undefined", "null", "boolean"];
+//   let empt = [];
+//   for (let i = 0; i < arrayOfdata.length; i++) {
+//     if (!array.every((value) => typeof value === arrayOfdata[i])) {
+//       empt.push(arrayOfdata[i]);
+//     }
+//   }
+//   if (empt.length == arrayOfdata.length) {
+//     return "Array is not containing the same data type";
+//   } else {
+//     return "Array is containing same data type";
+//   }
+// }
+// console.log(arrayDataTypes([1, 2, 3, 4, 5, "NaN"]));
+
+const arrayDataTypes = (arr) => {
+  let text = "";
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (typeof arr[i] !== typeof arr[i + 1]) {
+      text = "Array is not containing the same data type";
+      break;
+    } else {
+      text = "Array is containing the same data type";
+    }
   }
-}
-console.log(arrayDataTypes(nil));
+  return text;
+};
+console.log(arrayDataTypes([{}, undefined, null, {}, []]));
 
 // function isValidVariable(){
 //   let
 // for(i = 0; i < )
 // }
 
-// Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
-
-// sevenRandomNumbers()
-// [(1, 4, 5, 7, 9, 8, 0)]
-// Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
-
 function randomNumbers() {
   let arr = [];
-  for (i = 0; arr.length < 7; i++) {
+  for (let i = 0; arr.length < 7; i++) {
     let random = Math.ceil(Math.random() * 9);
     if (arr.indexOf(random) === -1) arr.push(random);
   }
   return arr;
 }
 console.log(randomNumbers());
+
+const reverseCountries = (arr) => {
+  const newArr = arr.slice(0);
+  const array = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    array.push(arr[i]);
+  }
+  return array;
+};
+console.log(reverseCountries(["Google", "Facebook", "Apple", "Amazon"]));
