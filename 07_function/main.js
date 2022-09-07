@@ -430,6 +430,38 @@ function generateColors(color, number) {
 }
 console.log(generateColors("hex", 4));
 
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  console.log(arr);
+}
+let arr = [1, 2, 3, 4, 5];
+shuffleArray(arr);
+
+const shuffledArray = (arr) => arr.sort(() => 0.5 - Math.random());
+console.log(shuffledArray(["a", "b", "c", "d", "e", "f", "g"]));
+
+function shuffle(originalArray) {
+  let array = [].concat(originalArray);
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+console.log(shuffle([1, 2, 3, 4, 5]));
+
 function factorial(integer) {
   let factorial = 1;
   for (i = integer; i > 0; i--) {
@@ -530,6 +562,7 @@ const uniqueArray = (arr) => {
       array.push(arr[i]);
     }
   }
+
   return array.length === arr.length ? "unique array" : "not unique";
 };
 console.log(uniqueArray(["Google", 7, true, "Apple", "Amazon", 9, 9]));
@@ -564,10 +597,12 @@ const arrayDataTypes = (arr) => {
 };
 console.log(arrayDataTypes([{}, undefined, null, {}, []]));
 
-// function isValidVariable(){
-//   let
-// for(i = 0; i < )
-// }
+function isValidVariable(val) {
+  let regex = "^[a-zA-Z_$][a-zA-Z0-9_$]*$";
+  if (val.match(regex)) return `${val} is a valid variable name`;
+  return `${val} is an invalid variable name`;
+}
+console.log(isValidVariable("_you"));
 
 function randomNumbers() {
   let arr = [];

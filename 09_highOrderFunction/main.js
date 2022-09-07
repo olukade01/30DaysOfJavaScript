@@ -378,3 +378,37 @@ console.log("max: ", statistics.max(ages));
 console.log("count: ", statistics.count(ages));
 console.log("percentile: ", statistics.percentile(ages));
 console.log("frequencyDistribution: ", statistics.frequencyDistribution(ages));
+
+const countriess = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+//Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+// console.log(
+//   countriess.reduce((acc, cur) => {
+//     return (
+//       acc +
+//       `, ${
+//         countriess.indexOf(cur) === countriess.length - 1
+//           ? `and ${cur} are north European countries`
+//           : cur
+//       }`
+//     );
+//   }, "Estonia")
+// );
+const productss = [
+  { product: "banana", price: 3 },
+  { product: "mango", price: 6 },
+  { product: "potato", price: "" },
+  { product: "avocado", price: 8 },
+  { product: "coffee", price: 10 },
+  { product: "tea", price: "" },
+];
+console.log(
+  productss
+    .filter((val) => typeof val.price === "number")
+    .reduce((acc, cur) => acc + cur.price, 0)
+);
+console.log(
+  productss.reduce((acc, cur) => {
+    if (cur.price === "") cur.price = 0;
+    return acc + cur.price;
+  }, 0)
+);
