@@ -9,31 +9,47 @@
 // is_valid_variable('first-name') # False
 // is_valid_variable('1first_name') # False
 // is_valid_variable('firstname') # True
-
 const str =
-  "He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.";
+  'He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.';
 const regExp = /\d+/g;
 const result = str.match(regExp);
-console.log(result.reduce((acc, curr) => acc + parseInt(curr), 0));
+console.log(
+  result.reduce(
+    (acc, curr) => acc + +`${curr !== '10000' ? curr * 12 : curr}`,
+    0
+  )
+);
 
 const string =
-  "The position of some particles on the horizontal x-axis -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction.";
-const regEx = /-*\d+/g;
+  'The position of some particles on the horizontal x-axis -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction.';
+const regEx = /-?\d+/g;
 const sum = string.match(regEx);
 console.log(sum.reduce((acc, curr) => acc + parseInt(curr), 0));
 
 const is_valid_variable = (variable) => {
-  // if (variable.startsWith("$")) return true;
-  const rules = /^[a-z$_][a-z0-9$_]*$/i;
-  let valid = rules.test(variable);
-  if (valid) {
-    return true;
-  } else return false;
+  const rules = /^[a-z$_][\w$]*$/i;
+  return rules.test(variable);
 };
-console.log(is_valid_variable(".come"));
+console.log(is_valid_variable('.come'));
 
 let paragraph = `I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.`;
+
 const TenMostFrequentWords = (paragraph, count) => {
+  const par = paragraph.match(/\w+/g);
+  let arr = [];
+  par.forEach((p) => {
+    let ind = arr.findIndex((a) => a.word === p);
+    if (ind === -1) {
+      arr.push({ word: p, count: 1 });
+    } else {
+      arr[ind].count += 1;
+    }
+  });
+  return arr.sort((a, b) => b.count - a.count).slice(0, count);
+};
+console.log(TenMostFrequentWords(paragraph, 10));
+
+const TenMostFrequentWord = (paragraph, count) => {
   const par = paragraph.match(/\w+/g);
   const para = {};
   par.forEach((word) => {
@@ -50,4 +66,22 @@ const TenMostFrequentWords = (paragraph, count) => {
     .sort((a, b) => b.count - a.count)
     .slice(0, count);
 };
-console.log(TenMostFrequentWords(paragraph, 10));
+console.log(TenMostFrequentWord(paragraph, 10));
+
+const sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
+const cleaned = sentence.replace(/[^\w\s]+/g, '');
+
+const mostFrequentWords = (cleaned) => {
+  const par = cleaned.match(/\w+/g);
+  let arr = [];
+  par.forEach((p) => {
+    let ind = arr.findIndex((a) => a.word === p);
+    if (ind === -1) {
+      arr.push({ word: p, count: 1 });
+    } else {
+      arr[ind].count += 1;
+    }
+  });
+  return arr.sort((a, b) => b.count - a.count).slice(0, 3);
+};
+console.log(mostFrequentWords(cleaned));

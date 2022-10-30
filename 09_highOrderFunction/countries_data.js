@@ -2109,11 +2109,15 @@ console.log(
 );
 
 // console.log(countries[0]);
-const countrieslanguages = countriess
-  .map((country) => country.languages)
-  .flat();
+const countrieslanguages = countriess.map(({ languages }) => languages).flat();
+console.log(countrieslanguages);
 const languages = new Set(countrieslanguages);
 console.log({ languages, count: languages.size });
+const newAr = [];
+for (let country of countrieslanguages) {
+  const set = newAr.push(countrieslanguages.filter((a) => a === country));
+}
+console.log(new Set(newAr));
 
 // let numArray = [1, 2, 3, 3, 4, 3, 1, 2, 6, 7, 0, 9];
 
@@ -2127,3 +2131,37 @@ console.log({ languages, count: languages.size });
 // } else {
 //   console.log(duplicates); //3,3,1,2
 // }
+
+// const mostSpokenLanguages = (countries, n) => {
+//   let arr = [];
+//   countries.forEach(({ languages }) => {
+//     languages.forEach((language) => {
+//       let index = arr.findIndex((a) => a.language === language);
+//       if (index === -1) {
+//         arr.push({ language, count: 1 });
+//       } else {
+//         arr[index].count += 1;
+//       }
+//     });
+//   });
+//   return arr.sort((a, b) => b.count - a.count).splice(0, n);
+// };
+
+const mostSpokenLanguages = (countries, n) => {
+  const obj = {};
+  countries.forEach(({ languages }) => {
+    languages.forEach((language) => {
+      if (obj[language]) {
+        obj[language] += 1;
+      } else {
+        obj[language] = 1;
+      }
+    });
+  });
+  return Object.entries(obj)
+    .map((lang) => ({ country: lang[0], count: lang[1] }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, n);
+};
+
+console.log(mostSpokenLanguages(countriess, 5));

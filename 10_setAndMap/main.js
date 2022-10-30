@@ -1,23 +1,23 @@
-// const nigerianStates = [
-//   ["Abia", "Umahia"],
-//   ["Edo", "Benin city"],
-// ];
-// const ngnStates = new Map(nigerianStates);
-// ngnStates.set("Kwara", "Ilorin");
-// ngnStates.set("Kogi", "Lokoja");
-// console.log(ngnStates);
-// console.log(ngnStates.get("Kwara"));
-// console.log(ngnStates.has("Bayelsa"));
-// console.log(ngnStates.has("Abia"));
+const nigerianStates = [
+  ['Abia', 'Umahia'],
+  ['Edo', 'Benin city'],
+];
+const ngnStates = new Map(nigerianStates);
+ngnStates.set('Kwara', 'Ilorin');
+ngnStates.set('Kogi', 'Lokoja');
+console.log(ngnStates);
+console.log(ngnStates.get('Kwara'));
+console.log(ngnStates.has('Bayelsa'));
+console.log(ngnStates.has('Abia'));
 
-// for (let state of ngnStates) {
-//   console.log(state[0]);
-//   console.log(state[1]);
-//   console.log(state);
-// }
-// for (let [state, capital] of ngnStates) {
-//   console.log(`${capital} is the capital of ${state}`);
-// }
+for (let state of ngnStates) {
+  console.log(state[0]);
+  console.log(state[1]);
+  console.log(state);
+}
+for (let [state, capital] of ngnStates) {
+  console.log(`${capital} is the capital of ${state}`);
+}
 
 // array destructuring
 // const myName = ["Abdulsamii", "Ajala"];
@@ -27,6 +27,7 @@
 // Exercises
 // 1. create an empty set
 const emptySet = new Set();
+console.log(emptySet);
 // 2. Create a set containing 0 to 10 using loop
 const numSet = new Set();
 for (let i = 0; i <= 10; i++) {
@@ -36,9 +37,9 @@ console.log(numSet);
 console.log(Array.from(Array(11).keys()));
 console.log(Array.from(Array(13).keys()).slice(5));
 const jalasemData = {
-  name: "Abdulsamii",
+  name: 'Abdulsamii',
   age: 24,
-  placeOfBirth: "Bethlehem",
+  placeOfBirth: 'Bethlehem',
 };
 console.log(Object.keys(jalasemData));
 const ages = [22, 34, 21, 19, 25, 18];
@@ -49,11 +50,11 @@ numSet.delete(9);
 console.log(numSet);
 numSet.clear();
 console.log(numSet);
-const people = new Set(["Jalasem", "Aisha", "Badmus", "Endurance"]);
+const people = new Set(['Jalasem', 'Aisha', 'Badmus', 'Endurance']);
 console.log(people);
 
 // Create a map of countries and number of characters of a country
-const countriez = "Nigeria,Cameroon,South Africa,Ghana".split(",");
+const countriez = 'Nigeria,Cameroon,South Africa,Ghana'.split(',');
 const countriesMap = new Map();
 countriez.forEach((country) => {
   countriesMap.set(country, country.length);
@@ -64,7 +65,7 @@ const a = [4, 5, 8, 9];
 const A = new Set(a);
 const b = [3, 4, 5, 7];
 const B = new Set(b);
-const countries = ["Finland", "Sweden", "Norway"];
+const countries = ['Finland', 'Sweden', 'Norway'];
 // Find a union b
 const Uba = new Set([...a, ...b]);
 console.log({ Uba });
@@ -76,7 +77,7 @@ const aWb = [...a, ...b];
 console.log({ aWb });
 
 // How many languages are there in the countries object file.
-const allCountries = require("./countries_data");
+const allCountries = require('./countries_data');
 console.log(allCountries[0]);
 const countrieslanguages = allCountries
   .map((country) => country.languages)

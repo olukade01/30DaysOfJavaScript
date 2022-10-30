@@ -307,7 +307,7 @@ const statistics = {
   mean: (values) => values.reduce((acc, cur) => acc + cur, 0) / values.length,
   median: (values) => {
     values = values.sort((a, b) => a - b);
-    const oddLength = Boolean(values.length % 2);
+    const oddLength = values.length % 2;
     if (oddLength) return values[(values.length - 1) / 2];
 
     return [values[values.length / 2 - 1], values[values.length / 2]];
@@ -324,7 +324,7 @@ const statistics = {
     return Object.entries(occurrence).sort((a, b) => b[1] - a[1])[0][0];
   },
   range: function (values) {
-    return this.max(values) - this.min(values);
+    return `${this.max(values)} - ${this.min(values)}`;
   },
   variance: function (values) {
     return this.standardDeviation(values) ** 2;
