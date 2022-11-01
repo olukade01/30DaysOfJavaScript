@@ -265,8 +265,8 @@ console.log('StandardDeviation: ', statistics.standardDeviation());
 console.log('Min: ', statistics.min());
 console.log('Max: ', statistics.max());
 console.log('Count: ', statistics.count());
-// console.log('Percentile: ', statistics.percentile());
-// console.log('Frequency Distribution: ', statistics.frequencyDistribution());
+console.log('Percentile: ', statistics.percentile());
+console.log('Frequency Distribution: ', statistics.frequencyDistribution());
 
 class PersonAccount {
   constructor(
