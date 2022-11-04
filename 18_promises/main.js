@@ -34,8 +34,89 @@ withdrawal(40000)
   })
   .catch((err) => console.error(err));
 
-const total = new Set(
-  countries
-    .forEach((country) => country.languages.map((language) => language.name))
-    .flat()
-).size;
+const countriesAPI = 'https://restcountries.com/v2/all';
+const catsAPI = 'https://api.thecatapi.com/v1/breeds';
+
+// Read the countries API using fetch and print the name of country, capital, languages, population and area.
+
+const countriesData = async () => {
+  try {
+    const countries = await fetch(countriesAPI);
+    const toJson = await countries.json();
+    console.log(
+      toJson.map(({ name, capital, languages, population, area }) => ({
+        name,
+        capital,
+        languages,
+        population,
+        area,
+      }))
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+countriesData();
+
+// Print out all the cat names in to catNames variable.
+
+const catNames = async () => {
+  try {
+    const cats = await fetch(catsAPI);
+    const toJson = await cats.json();
+    console.log(toJson.map(({ name }) => name));
+  } catch (err) {
+    console.error(err);
+  }
+};
+catNames();
+
+// Read the cats api and find the average weight of cat in metric unit.
+
+const cats = async () => {
+  try {
+    const cats = await fetch(catsAPI);
+    const toJson = await cats.json();
+    console.log(toJson);
+    console.log(
+      toJson.map(({ weight }) => {
+        const w = weight.metric;
+        return (+w[w.length - 1] + +w[0]) / 2;
+      })
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+cats();
+
+// Read the countries api and find out the 10 largest countries
+
+const largestCountries = async () => {
+  try {
+    const countries = await fetch(countriesAPI);
+    const toJson = await countries.json();
+    console.log(
+      toJson.sort((a, b) => b.population - a.population).slice(0, 10)
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+largestCountries();
+
+// Read the countries api and count total number of languages in the world used as officials.
+
+const languages = async () => {
+  try {
+    const countries = await fetch(countriesAPI);
+    const toJson = await countries.json();
+    const total = new Set(
+      toJson.map(({ languages }) => languages.map(({ name }) => name)).flat()
+    ).size;
+    console.log(total);
+  } catch (err) {
+    console.error(err);
+  }
+};
+languages();
