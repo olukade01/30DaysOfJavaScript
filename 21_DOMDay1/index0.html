@@ -14,61 +14,56 @@
     <script>
       //level 1
       //1
-      document.querySelector("p");
+      console.log(document.querySelector('p'));
       //2
-      document.querySelector("#first-title");
-      document.querySelector("#second-title");
-      document.querySelector("#third-title");
+      console.log(document.querySelector('#first-title'));
+      document.querySelector('#second-title');
+      document.querySelector('#third-title');
       //3
-      const nodeList = document.querySelectorAll("p");
+      const nodeList = document.querySelectorAll('p');
       //4
       const array = [];
       nodeList.forEach((list) => array.push(list.textContent));
       console.log(array);
       //5
-      nodeList[3].textContent = "Fourth Paragraph";
+      nodeList[3].textContent = 'Fourth Paragraph';
       //6
-      nodeList[3].id = "fourth-title";
-      nodeList[3].className = "title";
-      nodeList[2].setAttribute("class", "third");
-      nodeList[2].setAttribute("id", "third-id");
-      nodeList[1].classList.add("second");
-      nodeList[1].id = "second-id";
-      nodeList[0].classList.add("first");
-      nodeList[0].setAttribute("id", "first-id");
+      nodeList[3].id = 'fourth-title';
+      nodeList[3].className = 'title';
+      nodeList[2].setAttribute('class', 'third');
+      nodeList[2].setAttribute('id', 'third-id');
+      nodeList[1].classList.add('second');
+      nodeList[1].id = 'second-id';
+      nodeList[0].classList.add('first');
+      nodeList[0].setAttribute('id', 'first-id');
       //level 2
       //1
 
-      nodeList[0].style.color = "red";
-      nodeList[1].style.color = "purple";
-      nodeList[2].style.color = "green";
-      nodeList[3].style.color = "blue";
-      nodeList[0].style.backgroundColor = "grey";
-      nodeList[1].style.backgroundColor = "yellow";
-      nodeList[2].style.backgroundColor = "pink";
-      nodeList[3].style.backgroundColor = "magenta";
-      nodeList[0].style.border = "2px solid orange";
-      nodeList[1].style.border = "2px solid lightblue";
-      nodeList[2].style.border = "2px solid #ff211a";
-      nodeList[3].style.border = "2px solid #be7f42";
-      nodeList[0].style.fontSize = "1.3rem";
-      nodeList[1].style.fontSize = "1.5rem";
-      nodeList[2].style.fontSize = "2rem";
-      nodeList[3].style.fontSize = "1.8rem";
-      nodeList[0].style.fontFamily = "segoe-UI";
-      nodeList[1].style.fontFamily = "sans-serif";
-      nodeList[2].style.fontFamily = "apple-system";
-      nodeList[3].style.fontFamily = "new-times-roman";
-      //2
+      nodeList[0].style.color = 'red';
+      nodeList[1].style.color = 'purple';
+      nodeList[2].style.color = 'green';
+      nodeList[3].style.color = 'blue';
+      nodeList[0].style.backgroundColor = 'grey';
+      nodeList[1].style.backgroundColor = 'yellow';
+      nodeList[2].style.backgroundColor = 'pink';
+      nodeList[3].style.backgroundColor = 'magenta';
+      nodeList[0].style.border = '2px solid orange';
+      nodeList[1].style.border = '2px solid lightblue';
+      nodeList[2].style.border = '2px solid #ff211a';
+      nodeList[3].style.border = '2px solid #be7f42';
+      nodeList[0].style.fontSize = '1.3rem';
+      nodeList[1].style.fontSize = '1.5rem';
+      nodeList[2].style.fontSize = '2rem';
+      nodeList[3].style.fontSize = '1.8rem';
+      nodeList[0].style.fontFamily = 'segoe-UI';
+      nodeList[1].style.fontFamily = 'sans-serif';
+      nodeList[2].style.fontFamily = 'apple-system';
+      nodeList[3].style.fontFamily = 'new-times-roman';
+      //2 & 3
       nodeList.forEach((list, i) => {
-        i % 2 === 0 ? (list.style.color = "green") : (list.style.color = "red");
-        i === 0
-          ? (list.textContent = "first")
-          : i === 1
-          ? (list.textContent = "second")
-          : i === 2
-          ? (list.textContent = "third")
-          : (list.textContent = "fourth");
+        i % 2 === 0 ? (list.style.color = 'green') : (list.style.color = 'red');
+        list.textContent =
+          i == 0 ? 'first' : i == 1 ? 'second' : i == 2 ? 'third' : 'fourth';
       });
       console.log(nodeList);
     </script>
