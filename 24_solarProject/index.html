@@ -10,7 +10,7 @@
       body {
         margin: 0;
         padding: 0;
-        background-image: url("./images/galaxy.gif");
+        background-image: url('./images/galaxy.gif');
       }
       h1 {
         color: white;
@@ -71,83 +71,77 @@
     </form>
     <div class="main">
       <img alt="planet" src="./images/earth.png" />
-      <div class="inner hide">
-        <!-- <div class="inner-circle"></div> -->
-      </div>
-    </div>  
+      <div class="inner hide"></div>
+    </div>
     <script>
-      const inputEl = document.querySelector("input");
-      const selectEl = document.querySelector("select");
-      const formEl = document.querySelector("form");
-      const innerEl = document.querySelector(".inner");
-      const imgEl = document.querySelector("img");
-      const mainEl = document.querySelector(".main");
+      const inputEl = document.querySelector('input');
+      const selectEl = document.querySelector('select');
+      const formEl = document.querySelector('form');
+      const innerEl = document.querySelector('.inner');
+      const imgEl = document.querySelector('img');
+      const mainEl = document.querySelector('.main');
       const planets = [
-        "EARTH",
-        "JUPITER",
-        "MARS",
-        "MERCURY",
-        "MOON",
-        "NEPTUNE",
-        "PLUTO",
-        "SATURN",
-        "URANUS",
-        "VENUS",
+        'EARTH',
+        'JUPITER',
+        'MARS',
+        'MERCURY',
+        'MOON',
+        'NEPTUNE',
+        'PLUTO',
+        'SATURN',
+        'URANUS',
+        'VENUS',
       ];
-      const planetDivisors = {
-        earth: 2.2046,
-        jupiter: 2.1,
-        mars: 2.2,
-        mercury: 2.3,
-        moon: 3,
-        neptune: 2.11,
-        pluto: 1.8,
-        saturn: 2.22,
-        uranus: 1,
-        venus: 2.8,
+      const planetData = {
+        earth: [2.2046, './images/earth.png'],
+        jupiter: [2.1, './images/jupiter.png'],
+        mars: [2.2, './images/mars.png'],
+        mercury: [2.3, './images/mercury.png'],
+        moon: [3, './images/moon.png'],
+        neptune: [2.11, './images/neptune.png'],
+        pluto: [1.8, './images/pluto.png'],
+        saturn: [2.22, './images/saturn.png'],
+        uranus: [1, './images/uranus.png'],
+        venus: [2.8, './images/venus.png'],
       };
 
       planets.forEach((planet) => {
         selectEl.innerHTML += `<option value='${planet}'>${planet}</option>`;
       });
-      const planetUrl =
-        "https://raw.githubusercontent.com/Asabeneh/30-Days-Of-JavaScript/master/24_Day_Peroject_solar_system/24_day_starter/images";
-
-      formEl.addEventListener("submit", (e) => {
+      formEl.addEventListener('submit', (e) => {
         e.preventDefault();
-        innerEl.classList.remove("hide");
+        innerEl.classList.remove('hide');
 
         const mass = e.target.mass.value;
-        const planet = e.target.planet.value;
-        imgEl.setAttribute("src", `${planetUrl}/${planet.toLowerCase()}.png`);
-        mainEl.style.display = "flex";
-        mainEl.style.justifyContent = "center";
-        mainEl.style.alignItems = "center";
+        const planet = e.target.planet.value.toLowerCase();
+        imgEl.setAttribute('src', `${planetData[planet][1]}`);
+        mainEl.style.display = 'flex';
+        mainEl.style.justifyContent = 'center';
+        mainEl.style.alignItems = 'center';
+        mainEl.style.gap = '5rem';
         if (!mass) {
-          innerEl.textContent = "Mass is required";
-          imgEl.classList.add("hide");
+          innerEl.textContent = 'Mass is required';
+          imgEl.classList.add('hide');
           return;
         }
         if (!planet) {
-          innerEl.textContent = "You did not choose a planet yet";
-
+          innerEl.textContent = 'You did not choose a planet yet';
+          imgEl.classList.add('hide');
           return;
         }
-
-        imgEl.classList.remove("hide");
-        const weight = Number(mass) / planetDivisors[planet.toLowerCase()];
+        const weight = Number(mass) / planetData[planet][0];
         innerEl.innerHTML = `The weight of the object on ${planet} is <span class = 'weigh'>${weight.toFixed(
           2
         )} N</span>`;
-        const weighEl = document.querySelector(".weigh");
-        weighEl.style.backgroundColor = "rgba(100, 100, 100, 0.6)";
-        weighEl.style.width = "7rem";
-        weighEl.style.height = "7rem";
-        weighEl.style.borderRadius = "50%";
-        weighEl.style.display = "grid";
-        weighEl.style.placeItems = "center";
-        weighEl.style.margin = "1rem";
-        weighEl.style.fontWeight = "bolder";
+        const weighEl = document.querySelector('.weigh');
+        weighEl.style.backgroundColor = 'rgba(100, 100, 100, 0.6)';
+        weighEl.style.width = '7rem';
+        weighEl.style.height = '7rem';
+        weighEl.style.borderRadius = '50%';
+        weighEl.style.display = 'grid';
+        weighEl.style.placeItems = 'center';
+        weighEl.style.margin = '1rem';
+        weighEl.style.fontWeight = 'bolder';
       });
     </script>
   </body>

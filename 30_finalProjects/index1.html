@@ -78,55 +78,56 @@
       <button>Submit</button>
     </div>
     <script>
-      const inputEl = document.querySelectorAll("input");
-      const errorEl = document.querySelectorAll("span");
-      const requiredEl = document.querySelector(".required");
-      document.querySelector("button").addEventListener("click", (e) => {
+      const inputEl = document.querySelectorAll('input');
+      const errorEl = document.querySelectorAll('span');
+      const requiredEl = document.querySelector('.required');
+      document.querySelector('button').addEventListener('click', (e) => {
         inputEl.forEach((input, inputIndex) => {
           if (
             input.value &&
-            (input.name === "Firstname" || input.name === "Lastname") &&
-            !input.value.match(/^.[A-Za-z]{3,16}$/g)
+            (input.name === 'Firstname' || input.name === 'Lastname') &&
+            !input.value.match(/^.[A-Za-z]{2,16}$/g)
           ) {
             errorEl[inputIndex].textContent =
-              "Name must be alphanumeric and contain 3 - 16 characters";
+              'Name must be alphanumeric and contain 3 - 16 characters';
           } else if (
             input.value &&
-            input.name === "Email" &&
+            input.name === 'Email' &&
             !input.value.match(
               /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g
             )
           ) {
-            errorEl[inputIndex].textContent = "Email must be a valid address";
+            errorEl[inputIndex].textContent =
+              'Email must be a valid address, eg. example@example.com';
           } else if (
             input.value &&
-            input.name === "Password" &&
-            !input.value.match(/^.[a-zA-Z0-9@_-]{6,20}$/g)
+            input.name === 'Password' &&
+            !input.value.match(/^.[a-zA-Z0-9@_-]{5,20}$/g)
           ) {
             errorEl[inputIndex].textContent =
-              "Password must be alphanumeric(@, _ and - are also allowed) and between 6 to 20 character";
+              'Password must be alphanumeric(@, _ and - are also allowed) and between 6 to 20 character';
           } else if (
             input.value &&
-            input.name === "number" &&
+            input.name === 'number' &&
             !input.value.match(/^(\d{11})$/g)
           ) {
             errorEl[inputIndex].textContent =
-              "A valid telephone number of numbers and 11 characters";
+              'A valid telephone number of numbers and 11 characters';
           } else if (
             input.value &&
-            input.name === "bio" &&
+            input.name === 'bio' &&
             !input.value.match(/^.[a-z-_]{7,50}$/g)
           ) {
             errorEl[inputIndex].textContent =
-              "Bio must contain only lowercase letters, underscores, hyphens and be 8 to 50 characters";
+              'Bio must contain only lowercase letters, underscores, hyphens and be 8 to 50 characters';
           }
           setTimeout(() => {
-            errorEl[inputIndex].textContent = "";
+            errorEl[inputIndex].textContent = '';
           }, 5000);
           if (!input.value) {
-            requiredEl.textContent = "All fields required";
+            requiredEl.textContent = 'All fields required';
             setTimeout(() => {
-              requiredEl.textContent = "";
+              requiredEl.textContent = '';
             }, 5000);
           }
         });

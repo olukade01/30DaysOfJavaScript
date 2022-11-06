@@ -56,47 +56,47 @@
     <p></p>
     <div></div>
     <script>
-      const divEl = document.querySelector("div");
+      const divEl = document.querySelector('div');
       const users = [
         {
-          firstName: "MARTHA",
-          lastName: "YOHANES",
+          firstName: 'MARTHA',
+          lastName: 'YOHANES',
           date: new Date().toDateString(),
-          country: "FINLAND",
+          country: 'FINLAND',
           score: 85,
         },
         {
-          firstName: "DAVID",
-          lastName: "SMITH",
+          firstName: 'DAVID',
+          lastName: 'SMITH',
           date: new Date().toDateString(),
-          country: "UNITED KINGDOM",
+          country: 'UNITED KINGDOM',
           score: 80,
         },
         {
-          firstName: "ASABENEH",
-          lastName: "YETAYEH",
+          firstName: 'ASABENEH',
+          lastName: 'YETAYEH',
           date: new Date().toDateString(),
-          country: "FINLAND",
+          country: 'FINLAND',
           score: 75,
         },
         {
-          firstName: "MATHIAS",
-          lastName: "ELIAS",
+          firstName: 'MATHIAS',
+          lastName: 'ELIAS',
           date: new Date().toDateString(),
-          country: "SWEDEN",
+          country: 'SWEDEN',
           score: 70,
         },
       ];
 
       users.forEach((user) => {
-        const userEl = document.createElement("div");
-        userEl.classList.add("user");
-        userEl.style.backgroundColor = "red";
-        userEl.style.marginBottom = "0.5rem";
-        userEl.style.display = "flex";
-        userEl.style.justifyContent = "space-between";
-        userEl.style.alignItems = "center";
-        userEl.style.padding = "1rem";
+        const userEl = document.createElement('div');
+        userEl.classList.add('user');
+        userEl.style.backgroundColor = 'red';
+        userEl.style.marginBottom = '0.5rem';
+        userEl.style.display = 'flex';
+        userEl.style.justifyContent = 'space-between';
+        userEl.style.alignItems = 'center';
+        userEl.style.padding = '1rem';
         userEl.innerHTML = `
       
         <div class="inner2">
@@ -111,37 +111,37 @@
           <span class='five'>-5</span>
         </div>
       
-      `;
+        `;
 
-        const spanEl = document.querySelectorAll(".five");
+        const spanEl = document.querySelectorAll('.five');
         spanEl.forEach((span) => {
-          span.style.width = "2rem";
-          span.style.height = "2rem";
-          span.style.borderRadius = "50%";
-          span.style.backgroundColor = "white";
-          span.style.display = "grid";
-          span.style.placeItems = "center";
+          span.style.width = '2rem';
+          span.style.height = '2rem';
+          span.style.borderRadius = '50%';
+          span.style.backgroundColor = 'white';
+          span.style.display = 'grid';
+          span.style.placeItems = 'center';
         });
         divEl.appendChild(userEl);
       });
-      const eventEl = document.querySelectorAll(".events");
+      const eventEl = document.querySelectorAll('.events');
       eventEl.forEach((event) => {
-        event.style.display = "flex";
-        event.style.justifyContent = "space-between";
+        event.style.display = 'flex';
+        event.style.justifyContent = 'space-between';
       });
-      const deleteEl = document.querySelectorAll(".delete");
-      const buttonEl = document.querySelector("button");
-      const inputEl = document.querySelectorAll("input");
-      const pEl = document.querySelector("p");
-      pEl.style.textAlign = "center";
-      const userEl = document.querySelectorAll(".user");
-      buttonEl.addEventListener("click", (e) => {
+      const deleteEl = document.querySelectorAll('.delete');
+      const buttonEl = document.querySelector('button');
+      const inputEl = document.querySelectorAll('input');
+      const pEl = document.querySelector('p');
+      pEl.style.textAlign = 'center';
+      const userEl = document.querySelectorAll('.user');
+      buttonEl.addEventListener('click', (e) => {
         inputEl.forEach((input) => {
           if (!input.value) {
-            pEl.textContent = "All fields required";
-            pEl.style.color = "red";
+            pEl.textContent = 'All fields required';
+            pEl.style.color = 'red';
             setTimeout(() => {
-              pEl.textContent = "";
+              pEl.textContent = '';
             }, 2000);
           }
         });
@@ -151,14 +151,14 @@
           inputEl[2].value &&
           inputEl[3].value
         ) {
-          const newEl = document.createElement("div");
-          newEl.classList.add("user");
-          newEl.style.backgroundColor = "red";
-          newEl.style.marginBottom = "0.5rem";
-          newEl.style.display = "flex";
-          newEl.style.justifyContent = "space-between";
-          newEl.style.alignItems = "center";
-          newEl.style.padding = "1rem";
+          const newEl = document.createElement('div');
+          newEl.classList.add('user');
+          newEl.style.backgroundColor = 'red';
+          newEl.style.marginBottom = '0.5rem';
+          newEl.style.display = 'flex';
+          newEl.style.justifyContent = 'space-between';
+          newEl.style.alignItems = 'center';
+          newEl.style.padding = '1rem';
           newEl.innerHTML = `<div class="inner2">
             <span>${inputEl[0].value.toUpperCase()} ${inputEl[1].value.toUpperCase()}</span>
             <span>${new Date().toDateString()}</span>
@@ -172,23 +172,23 @@
             </div>`;
 
           divEl.appendChild(newEl);
-          document.querySelectorAll(".events").forEach((event) => {
-            event.style.display = "flex";
-            event.style.justifyContent = "space-between";
+          document.querySelectorAll('.events').forEach((event) => {
+            event.style.display = 'flex';
+            event.style.justifyContent = 'space-between';
           });
-          const deleteEls = document.querySelectorAll(".delete");
-          const userEls = document.querySelectorAll(".user");
+          const deleteEls = document.querySelectorAll('.delete');
+          const userEls = document.querySelectorAll('.user');
           let currentUserEl = userEls.forEach((userr) => {
             userr[userr.length - 1];
           });
           let currentDeleteEl = deleteEls.forEach((delet) => {
             delet[delet.length - 1];
           });
-          currentDeleteEl.addEventListener("click", (e) => {
+          currentDeleteEl.addEventListener('click', (e) => {
             currentUserEl.remove();
           });
         }
-        inputEl.forEach((value) => (value = ""));
+        inputEl.forEach((value) => (value = ''));
       });
       // deleteEl.forEach((deletee) => {
       //   deletee.addEventListener("click", (e) => {

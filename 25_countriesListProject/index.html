@@ -8,7 +8,7 @@
     <style>
       html,
       body {
-        font-family: "Avenir", Segoe UI, Ubuntu, Sans-serif;
+        font-family: 'Avenir', Segoe UI, Ubuntu, Sans-serif;
         margin: 0;
         padding: 0;
       }
@@ -27,25 +27,20 @@
 
       #data {
         max-width: 100%;
-        padding: 2rem 20rem;
+        padding: 2rem 15rem;
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-gap: 1rem;
+        grid-column-gap: 3rem;
         background-color: #eeefef;
         margin-top: -0.5rem;
       }
 
       #data > div {
-        position: relative;
-      }
-
-      #data > div span {
-        position: absolute;
-        /* left: 0; */
-        /* top: 0; */
         height: 1.6rem;
         background: orange;
       }
+
       button {
         background-color: orange;
         border: none;
@@ -69,19 +64,13 @@
         <p id="data-info">10 most populated countries in the world</p>
       </center>
       <hr />
-      <div id="data">
-        <!-- <span>China</span>
-        <div>
-          <span style="width: 70%"></span>
-        </div>
-        <span>4,70900</span> -->
-      </div>
+      <div id="data"></div>
     </main>
     <script src="./countries.js"></script>
     <script>
-      document.getElementById("countriesCount").textContent = countries.length;
-      const infoEl = document.getElementById("data-info");
-      const dataEl = document.getElementById("data");
+      document.getElementById('countriesCount').textContent = countries.length;
+      const infoEl = document.getElementById('data-info');
+      const dataEl = document.getElementById('data');
 
       function populationData() {
         const worldPopulation = countries.reduce(
@@ -92,23 +81,19 @@
           .sort((a, b) => b.population - a.population)
           .slice(0, 10);
         dataEl.innerHTML = `<span>World</span>
-          <div>
-            <span style="width: 100%"></span>
-            </div>
+          <div style="width: 100%"></div>
             <span>${worldPopulation.toLocaleString()}</span>`;
         mostPopulated.forEach((country) => {
           dataEl.innerHTML += `<span>${country.name}</span>
-              <div>
-                <span style="width: ${parseInt(
-                  (country.population * 100) / worldPopulation
-                )}%"></span>
-                  </div>
-                  <span>${country.population.toLocaleString()}</span>`;
+              <div style="width: ${parseInt(
+                (country.population * 100) / worldPopulation
+              )}%"></div>
+                <span>${country.population.toLocaleString()}</span>`;
         });
       }
 
       function languageData() {
-        dataEl.innerHTML = "";
+        dataEl.innerHTML = '';
         let languages = {};
         countries.forEach((country) => {
           country.languages.forEach((language) => {
@@ -117,38 +102,31 @@
           });
         });
         const sortedLanguages = Object.entries(languages)
-          // .map((language) => ({
-          //   language: language[0],
-          //   count: language[1],
-          // }));
           .sort((a, b) => b[1] - a[1])
           .slice(0, 10);
-        // console.log(sortedLanguages);
         const allLanguages = new Set(
-          countries.map((country) => country.languages).flat()
+          countries.map(({ languages }) => languages).flat()
         ).size;
 
         sortedLanguages.forEach((lang) => {
           dataEl.innerHTML += `
         <span>${lang[0]}</span>
-        <div><span style="width: ${(lang[1] * 100) / allLanguages}%">
-
-          </span></div>
+        <div style="width: ${(lang[1] * 100) / allLanguages}%"></div>
         <span>${lang[1]}</span>
         `;
         });
       }
 
-      document.querySelectorAll("button").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
+      document.querySelectorAll('button').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
           const clicked = event.target.textContent.toLowerCase();
 
-          if (clicked === "population") {
+          if (clicked === 'population') {
             populationData();
-            infoEl.textContent = "10 most populated countries in the world";
+            infoEl.textContent = '10 most populated countries in the world';
           }
-          if (clicked === "languages") {
-            infoEl.textContent = "10 most spoken languages in the world";
+          if (clicked === 'languages') {
+            infoEl.textContent = '10 most spoken languages in the world';
             languageData();
           }
         });

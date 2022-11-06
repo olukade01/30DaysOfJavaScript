@@ -70,47 +70,47 @@
         }
         return true;
       }
-      const buttonEl = document.querySelector("button");
-      const inputEl = document.querySelector("input");
-      const containerEl = document.querySelector("div");
-      const pEl = document.querySelector(".alert");
+      const buttonEl = document.querySelector('button');
+      const inputEl = document.querySelector('input');
+      const containerEl = document.querySelector('div');
+      const pEl = document.querySelector('.alert');
 
-      generatedNum = (max = 20) => {
-        containerEl.innerHTML = "";
+      const generatedNum = (max = 20) => {
+        containerEl.innerHTML = '';
         Array.from(Array(max).keys()).forEach((num) => {
-          const numbersEl = document.createElement("div");
-          numbersEl.style.height = "3rem";
-          numbersEl.style.display = "grid";
-          numbersEl.style.fontSize = "2rem";
-          numbersEl.style.fontWeight = "bolder";
-          numbersEl.style.placeItems = "center";
-          numbersEl.style.color = "white";
+          const numbersEl = document.createElement('div');
+          numbersEl.style.height = '3rem';
+          numbersEl.style.display = 'grid';
+          numbersEl.style.fontSize = '2rem';
+          numbersEl.style.fontWeight = 'bolder';
+          numbersEl.style.placeItems = 'center';
+          numbersEl.style.color = 'white';
           numbersEl.style.backgroundColor = isPrimeNo(num)
-            ? "red"
+            ? 'red'
             : num % 2
-            ? "yellow"
-            : "green";
+            ? 'yellow'
+            : 'green';
           numbersEl.textContent = num;
           containerEl.appendChild(numbersEl);
         });
       };
       generatedNum();
-      buttonEl.addEventListener("click", () => {
+      buttonEl.addEventListener('click', () => {
         let nums = Number(inputEl.value);
         if (isNaN(nums)) {
-          pEl.textContent = "Input value must be a number";
-          pEl.style.color = "red";
+          pEl.textContent = 'Input value must be a number';
+          pEl.style.color = 'red';
           setInterval(() => {
-            pEl.textContent = "";
+            pEl.textContent = '';
           }, 10_000);
           return;
         }
         if (!nums) {
           pEl.textContent =
-            "Enter number value on the input field to generate numbers";
-          pEl.style.color = "red";
+            'Enter number value on the input field to generate numbers';
+          pEl.style.color = 'red';
           setInterval(() => {
-            pEl.textContent = "";
+            pEl.textContent = '';
           }, 10000);
           return;
         }

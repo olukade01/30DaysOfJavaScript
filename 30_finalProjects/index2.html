@@ -45,22 +45,22 @@
       <img src="./party-popper.svg" />
     </div>
     <script>
-      const containerEl = document.querySelector("div");
-      const spanEl = document.querySelector("span");
+      const containerEl = document.querySelector('div');
+      const spanEl = document.querySelector('span');
       const random = () => {
         return Math.floor(Math.random() * 256);
       };
       const fonts = [
-        "Courier New",
-        "Franklin Gothic Medium",
-        "Arial Narrow",
-        "sans-serif",
-        "Segoe UI",
-        "Times New Roman",
-        "Impact",
-        "Haettenschweiler",
-        "Arial Narrow Bold",
-        "sans-serif",
+        'Courier New',
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        'sans-serif',
+        'Segoe UI',
+        'Times New Roman',
+        'Impact',
+        'Haettenschweiler',
+        'Arial Narrow Bold',
+        'sans-serif',
       ];
       const fontWeight = [100, 300, 500, 700, 900];
       const randomWeight = () => {
@@ -69,30 +69,30 @@
       const randomFonts = () => {
         return Math.floor(Math.random() * fonts.length);
       };
-      const sentence = spanEl.textContent.split("");
+      const sentence = spanEl.textContent.split('');
       let newEl;
       setInterval(() => {
-        containerEl.innerHTML = "";
+        containerEl.innerHTML = '';
         spanEl.style.fontWeight = fontWeight[randomWeight()];
-        spanEl.style.fontFamily = fonts[randomFonts()];
+        containerEl.style.fontFamily = fonts[randomFonts()];
 
-        newEl = document.createElement("img");
-        newEl.setAttribute("src", "./party-popper.svg");
-        newEl.classList.add("party");
+        newEl = document.createElement('img');
+        newEl.setAttribute('src', './party-popper.svg');
+        newEl.classList.add('party');
         containerEl.appendChild(newEl);
 
         sentence.forEach((letter) => {
-          const letterEl = document.createElement("span");
-          letterEl.classList.add("letter");
+          const letterEl = document.createElement('span');
+          letterEl.classList.add('letter');
           letterEl.style.color = `rgb(${random()}, ${random()}, ${random()})`;
           letterEl.textContent = letter;
           containerEl.appendChild(letterEl);
         });
 
-        newEl = document.createElement("img");
-        newEl.setAttribute("src", "./party-popper.svg");
+        newEl = document.createElement('img');
+        newEl.setAttribute('src', './party-popper.svg');
         containerEl.appendChild(newEl);
-        newEl.classList.add("party");
+        newEl.classList.add('party');
       }, 3000);
     </script>
   </body>

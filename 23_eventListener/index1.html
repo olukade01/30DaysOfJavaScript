@@ -28,18 +28,18 @@
     </style>
   </head>
   <body>
-    <h1>Press any keyboard key <span id="key"></span></h1>
+    <h1>Press any keyboard key</h1>
     <span id="code"></span>
     <script>
-      window.addEventListener("keydown", (e) => {
+      window.addEventListener('keydown', (e) => {
         document.querySelector(
-          "h1"
+          'h1'
         ).innerHTML = `You pressed <span id="key"></span>`;
-        document.querySelector("#key").textContent = e.key;
-        document.querySelector("#code").textContent = e.keyCode;
-        document.querySelector("#code").style.padding = "2rem 2rem";
-        document.querySelector("#code").style.boxShadow =
-          "0px 0px 5px 1px lightgrey";
+        document.querySelector('#key').textContent = e.key;
+        document.querySelector('#code').textContent = e.keyCode;
+        document.querySelector('#code').style.padding = '2rem 2rem';
+        document.querySelector('#code').style.boxShadow =
+          '0px 0px 5px 1px lightgrey';
       });
     </script>
   </body>

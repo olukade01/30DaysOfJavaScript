@@ -12,7 +12,7 @@
         padding: 0;
       }
       .upper {
-        background-image: url("./globe-2.jpg");
+        background-image: url('./globe-2.jpg');
         background-blend-mode: multiply;
         background-color: #374c63cf;
         height: 28rem;
@@ -87,7 +87,7 @@
       <header>
         <h1>WORLD COUNTRIES LIST</h1>
         <h3>Total Number of Countries: <span id="count"></span></h3>
-        <p></p>
+        <p class="det"></p>
       </header>
       <center>
         <button>STARTING WORD</button>
@@ -106,67 +106,57 @@
 
     <script src="./countries.js"></script>
     <script>
-      document.getElementById("count").textContent = countries.length;
-      const buttonEl = document.querySelectorAll("button");
-      const lowerEl = document.querySelector(".lower");
-      const sortButtonEl = document.querySelector(".sort");
-      const arrowEl = document.querySelector(".arrow");
-      const inputEl = document.querySelector("input");
-      let order = "alphabetical";
-      let rotate = 180;
-      let searchBy = "";
-      let countryDisplayed;
-      // countryDisplayed = countries;
+      document.getElementById('count').textContent = countries.length;
+      const buttonEl = document.querySelectorAll('button');
+      const lowerEl = document.querySelector('.lower');
+      const sortButtonEl = document.querySelector('.sort');
+      const arrowEl = document.querySelector('.arrow');
+      const inputEl = document.querySelector('input');
+      const upEl = document.querySelector('.up');
+      const detEl = document.querySelector('.det');
+      let order = 'alphabetical';
+      let rotate = 0;
+      let searchBy = '';
+      let countryDisplayed = countries;
 
       const sortCountry = (data, order) => {
         let sortedCountry = data.sort();
         sortedCountry =
-          order === "alphabetical" ? sortedCountry : sortedCountry.reverse();
-        lowerEl.innerHTML = "";
+          order === 'alphabetical' ? sortedCountry : sortedCountry.reverse();
+        lowerEl.innerHTML = '';
         sortedCountry.forEach((item) => {
-          const newEl = document.createElement("div");
+          const newEl = document.createElement('div');
           newEl.textContent = item;
           newEl.style.backgroundImage = `url("./map_image.jpg")
            `;
-          newEl.style.backgroundSize = "contain";
-          newEl.style.height = "10rem";
-          newEl.style.color = "white";
-          newEl.style.fontSize = "1rem";
-          newEl.style.display = "grid";
-          newEl.style.textAlign = "center";
-          newEl.style.placeItems = "center";
-          newEl.style.backgroundBlendMode = "multiply";
-          newEl.style.backgroundColor = "#374c63cf";
-          newEl.style.borderRadius = "3px";
-          newEl.style.width = "9rem";
-          newEl.style.fontWeight = "bolder";
-          newEl.style.textTransform = "uppercase";
+          newEl.style.backgroundSize = 'contain';
+          newEl.style.height = '10rem';
+          newEl.style.color = 'white';
+          newEl.style.fontSize = '1rem';
+          newEl.style.display = 'grid';
+          newEl.style.textAlign = 'center';
+          newEl.style.placeItems = 'center';
+          newEl.style.backgroundBlendMode = 'multiply';
+          newEl.style.backgroundColor = '#374c63cf';
+          newEl.style.borderRadius = '3px';
+          newEl.style.width = '9rem';
+          newEl.style.fontWeight = 'bolder';
+          newEl.style.textTransform = 'uppercase';
           lowerEl.appendChild(newEl);
         });
       };
-
-      const searchCountryBy = (by, inputValue) => {
-        if (by === "starting word") {
-          countryDisplayed = countries.filter((country) =>
-            country.toLocaleLowerCase().startsWith(inputValue.toLowerCase())
-          );
-        } else {
-          countryDisplayed = countries.filter((country) =>
-            country.toLocaleLowerCase().includes(inputValue.toLowerCase())
-          );
-        }
-        sortCountry(countryDisplayed, order);
-      };
-
-      sortButtonEl.addEventListener("click", () => {
-        lowerEl.innerHTML = "";
+      sortButtonEl.addEventListener('click', () => {
         rotate = rotate === 180 ? 0 : 180;
         arrowEl.style.transform = `rotate(${rotate}deg)`;
-        order = order === "alphabetical" ? "reverse" : "alphabetical";
+        upEl.innerHTML =
+          rotate === 0
+            ? `<span>A</span> <span>Z</span>`
+            : `<span>Z</span> <span>A</span>`;
+        order = order === 'alphabetical' ? 'reverse' : 'alphabetical';
         sortCountry(countryDisplayed, order);
       });
       buttonEl.forEach((btn, btnIndex) => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener('click', (e) => {
           e.preventDefault();
           const buttonText = btn.textContent.toLowerCase();
           if (buttonText !== searchBy && btnIndex !== 2) {
@@ -174,9 +164,26 @@
           }
         });
       });
-      inputEl.addEventListener("input", (e) => {
+      inputEl.addEventListener('input', (e) => {
         if (searchBy) {
-          searchCountryBy(searchBy, e.target.value);
+          if (searchBy === 'starting word') {
+            countryDisplayed = countries.filter((country) =>
+              country
+                .toLocaleLowerCase()
+                .startsWith(e.target.value.toLowerCase())
+            );
+          } else {
+            countryDisplayed = countries.filter((country) =>
+              country.toLocaleLowerCase().includes(e.target.value.toLowerCase())
+            );
+          }
+          sortCountry(countryDisplayed, order);
+          e.target.value
+            ? (detEl.innerHTML =
+                searchBy === 'starting word'
+                  ? `countries start with <span style='color: red'>${e.target.value}</span> are <span style='color: green'>${countryDisplayed.length}<span>`
+                  : `countries containing <span style='color: red'>${e.target.value}</span> are <span style='color: green'>${countryDisplayed.length}<span>`)
+            : (detEl.textContent = '');
         }
       });
       sortCountry(countries, order);

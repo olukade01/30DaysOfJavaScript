@@ -34,49 +34,49 @@
   <body>
     <div>30 DAYS OF JAVASCRIPT CHALLENGE 2020 ASABENEH YETAYEH</div>
     <script>
-      const containerEl = document.querySelector("div");
+      const containerEl = document.querySelector('div');
       const random = () => {
         return Math.floor(Math.random() * 256);
       };
       const fonts = [
-        "Courier New",
-        "Franklin Gothic Medium",
-        "Arial Narrow",
-        "sans-serif",
-        "Segoe UI",
-        "Times New Roman",
+        'Courier New',
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        'sans-serif',
+        'Segoe UI',
+        'Times New Roman',
       ];
       const randomFonts = () => {
         return Math.floor(Math.random() * fonts.length);
       };
-      const sentence = containerEl.textContent.split("");
+      const sentence = containerEl.textContent.split('');
       console.log(sentence);
       let i = 0;
       setInterval(() => {
         containerEl.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
-        containerEl.innerHTML = "";
+        containerEl.innerHTML = '';
         containerEl.style.fontFamily = fonts[randomFonts()];
 
         sentence.forEach((letter) => {
-          const letterEl = document.createElement("span");
-          letterEl.classList.add("letters");
+          const letterEl = document.createElement('span');
+          letterEl.classList.add('letters');
           letterEl.style.color = `rgb(${random()}, ${random()}, ${random()})`;
           letterEl.textContent = letter;
           containerEl.appendChild(letterEl);
         });
-        const spanEl = document.querySelectorAll("span");
+        const spanEl = document.querySelectorAll('span');
 
         if (i === 0 || i === 1) {
-          spanEl[10].innerHTML += "<br>";
-          spanEl[21].innerHTML += "<br>";
+          spanEl[10].innerHTML += '<br>';
+          spanEl[21].innerHTML += '<br>';
           i += 1;
         } else if (i == 2) {
-          spanEl[10].innerHTML = " ";
-          spanEl[21].innerHTML = " ";
+          spanEl[10].innerHTML = ' ';
+          spanEl[21].innerHTML = ' ';
           i += 1;
         } else if (i == 3) {
-          spanEl[10].textContent = " ";
-          spanEl[21].textContent = " ";
+          spanEl[10].textContent = ' ';
+          spanEl[21].textContent = ' ';
           i = 0;
         }
       }, 3000);
