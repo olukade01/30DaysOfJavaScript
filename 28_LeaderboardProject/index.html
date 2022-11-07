@@ -99,35 +99,38 @@
       const pEl = document.querySelector('p');
       const inputsEl = document.querySelectorAll('input');
       const buttonEl = document.querySelector('button');
+      const generateId = () => Math.floor(Math.random() * 100000);
       let users = [
         {
           firstName: 'MARTHA',
           lastName: 'YOHANES',
           country: 'FINLAND',
           score: 85,
+          id: generateId(),
         },
         {
           firstName: 'DAVID',
           lastName: 'SMITH',
           country: 'UNITED KINGDOM',
           score: 80,
+          id: generateId(),
         },
         {
           firstName: 'ASABENEH',
           lastName: 'YETAYEH',
           country: 'FINLAND',
           score: 75,
+          id: generateId(),
         },
         {
           firstName: 'MATHIAS',
           lastName: 'ELIAS',
           country: 'SWEDEN',
           score: 70,
+          id: generateId(),
         },
       ];
-
       const date = new Date().toLocaleString();
-
       const userFunc = () => {
         users
           .sort((a, b) => b.score - a.score)
@@ -141,31 +144,31 @@
         <div class="nation">${user.country}</div>
         <div class="score">${user.score}</div>
         <div class="events">
-          <div onclick='handleDelete("${user.firstName}")' class="five">
+          <div onclick='handleDelete(${user.id})' class="five">
             <img class="svg" src="./image/img.svg" alt="" />
           </div>
-          <span onclick='handleAdd("${user.firstName}")' class="five">+5</span>
-          <span onclick='handleMinus("${user.firstName}")' class="five">-5</span>
+          <span onclick='handleAdd(${user.id})' class="five">+5</span>
+          <span onclick='handleMinus(${user.id})' class="five">-5</span>
         </div>`;
             divEl.appendChild(userEl);
           });
       };
 
       const handleDelete = (id) => {
-        users = users.filter((user) => user.firstName !== id);
+        users = users.filter((user) => user.id !== id);
         divEl.innerHTML = '';
         userFunc();
       };
       const handleAdd = (id) => {
         users.map((user) =>
-          user.firstName === id ? (user.score = user.score + 5) : user.score
+          user.id === id ? (user.score = +user.score + 5) : user.score
         );
         divEl.innerHTML = '';
         userFunc();
       };
       const handleMinus = (id) => {
         users.map((user) =>
-          user.firstName === id ? (user.score = user.score - 5) : user.score
+          user.id === id ? (user.score = user.score - 5) : user.score
         );
         divEl.innerHTML = '';
         userFunc();
@@ -189,6 +192,7 @@
             lastName: arr[1],
             country: arr[2],
             score: arr[3],
+            id: generateId(),
           });
         divEl.innerHTML = '';
         userFunc();
