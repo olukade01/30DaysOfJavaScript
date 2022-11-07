@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leaderboard</title>
+    <title>Document</title>
     <style>
       html,
       body {
@@ -16,190 +16,185 @@
       }
       form {
         display: flex;
+        gap: 0.5rem;
         justify-content: center;
       }
       input {
-        margin-right: 0.5rem;
         height: 2rem;
-        border-color: magenta;
+        border: 1px solid #e4c8c4;
         outline: none;
       }
       button {
         padding: 0 1.5rem;
-        outline: none;
-        background-color: pink;
+        color: white;
+        background-color: #e4c8c4;
         border: none;
       }
       ::placeholder {
         font-size: 1rem;
         padding-left: 0.2rem;
       }
-      div {
+      .wrapper {
         display: grid;
-        width: 60rem;
+        gap: 0.5rem;
+        width: 50rem;
         margin: auto;
+      }
+      .each {
+        background-color: #e4c8c4;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        padding: 0.5rem;
+      }
+      p {
+        color: red;
+        text-align: center;
+        font-weight: 600;
+      }
+      .five {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: white;
+        display: grid;
+        font-size: small;
+        place-items: center;
+      }
+      .five:hover {
+        background-color: greenyellow;
+        cursor: pointer;
+      }
+      .svg {
+        width: 1rem;
+      }
+      .events {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .inner2 {
+        display: grid;
+        gap: 0.5rem;
+      }
+      .date {
+        font-size: small;
+        color: gray;
       }
     </style>
   </head>
   <body>
     <h1>30 Days Of JavaScript Challenge Leaderboard</h1>
     <form onsubmit="return false">
-      <input type="text" placeholder="First Name" /><input
-        type="text"
-        placeholder="Last Name"
-      /><input type="text" placeholder="Country" /><input
-        type="number"
-        placeholder="Player Score"
-      />
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Last Name" />
+      <input type="text" placeholder="Country" />
+      <input type="number" placeholder="Player Score" />
       <button>Add Player</button>
     </form>
     <p></p>
-    <div></div>
+    <div class="wrapper"></div>
     <script>
       const divEl = document.querySelector('div');
-      const users = [
+      const pEl = document.querySelector('p');
+      const inputsEl = document.querySelectorAll('input');
+      const buttonEl = document.querySelector('button');
+      let users = [
         {
           firstName: 'MARTHA',
           lastName: 'YOHANES',
-          date: new Date().toDateString(),
           country: 'FINLAND',
           score: 85,
         },
         {
           firstName: 'DAVID',
           lastName: 'SMITH',
-          date: new Date().toDateString(),
           country: 'UNITED KINGDOM',
           score: 80,
         },
         {
           firstName: 'ASABENEH',
           lastName: 'YETAYEH',
-          date: new Date().toDateString(),
           country: 'FINLAND',
           score: 75,
         },
         {
           firstName: 'MATHIAS',
           lastName: 'ELIAS',
-          date: new Date().toDateString(),
           country: 'SWEDEN',
           score: 70,
         },
       ];
 
-      users.forEach((user) => {
-        const userEl = document.createElement('div');
-        userEl.classList.add('user');
-        userEl.style.backgroundColor = 'red';
-        userEl.style.marginBottom = '0.5rem';
-        userEl.style.display = 'flex';
-        userEl.style.justifyContent = 'space-between';
-        userEl.style.alignItems = 'center';
-        userEl.style.padding = '1rem';
-        userEl.innerHTML = `
-      
-        <div class="inner2">
-          <span>${user.firstName} ${user.lastName}</span>
-          <span>${user.date}</span>
+      const date = new Date().toLocaleString();
+
+      const userFunc = () => {
+        users
+          .sort((a, b) => b.score - a.score)
+          .forEach((user) => {
+            const userEl = document.createElement('div');
+            userEl.className = 'each';
+            userEl.innerHTML = `<div class="inner2">
+          <span class="names">${user.firstName} ${user.lastName}</span>
+          <span class="date">${date}</span>
         </div>
         <div class="nation">${user.country}</div>
-        <div>${user.score}</div>
+        <div class="score">${user.score}</div>
         <div class="events">
-          <img class="delete" src="./image/img.svg" alt="" />
-          <span class='five'>+5</span>
-          <span class='five'>-5</span>
-        </div>
-      
-        `;
+          <div onclick='handleDelete("${user.firstName}")' class="five">
+            <img class="svg" src="./image/img.svg" alt="" />
+          </div>
+          <span onclick='handleAdd("${user.firstName}")' class="five">+5</span>
+          <span onclick='handleMinus("${user.firstName}")' class="five">-5</span>
+        </div>`;
+            divEl.appendChild(userEl);
+          });
+      };
 
-        const spanEl = document.querySelectorAll('.five');
-        spanEl.forEach((span) => {
-          span.style.width = '2rem';
-          span.style.height = '2rem';
-          span.style.borderRadius = '50%';
-          span.style.backgroundColor = 'white';
-          span.style.display = 'grid';
-          span.style.placeItems = 'center';
-        });
-        divEl.appendChild(userEl);
-      });
-      const eventEl = document.querySelectorAll('.events');
-      eventEl.forEach((event) => {
-        event.style.display = 'flex';
-        event.style.justifyContent = 'space-between';
-      });
-      const deleteEl = document.querySelectorAll('.delete');
-      const buttonEl = document.querySelector('button');
-      const inputEl = document.querySelectorAll('input');
-      const pEl = document.querySelector('p');
-      pEl.style.textAlign = 'center';
-      const userEl = document.querySelectorAll('.user');
-      buttonEl.addEventListener('click', (e) => {
-        inputEl.forEach((input) => {
+      const handleDelete = (id) => {
+        users = users.filter((user) => user.firstName !== id);
+        divEl.innerHTML = '';
+        userFunc();
+      };
+      const handleAdd = (id) => {
+        users.map((user) =>
+          user.firstName === id ? (user.score = user.score + 5) : user.score
+        );
+        divEl.innerHTML = '';
+        userFunc();
+      };
+      const handleMinus = (id) => {
+        users.map((user) =>
+          user.firstName === id ? (user.score = user.score - 5) : user.score
+        );
+        divEl.innerHTML = '';
+        userFunc();
+      };
+
+      buttonEl.addEventListener('click', () => {
+        const arr = [];
+        inputsEl.forEach((input) => {
           if (!input.value) {
-            pEl.textContent = 'All fields required';
-            pEl.style.color = 'red';
-            setTimeout(() => {
+            pEl.textContent = 'All Fields are Required';
+            setInterval(() => {
               pEl.textContent = '';
-            }, 2000);
+            }, 3000);
+          } else {
+            arr.push(input.value.toUpperCase());
           }
         });
-        if (
-          inputEl[0].value &&
-          inputEl[1].value &&
-          inputEl[2].value &&
-          inputEl[3].value
-        ) {
-          const newEl = document.createElement('div');
-          newEl.classList.add('user');
-          newEl.style.backgroundColor = 'red';
-          newEl.style.marginBottom = '0.5rem';
-          newEl.style.display = 'flex';
-          newEl.style.justifyContent = 'space-between';
-          newEl.style.alignItems = 'center';
-          newEl.style.padding = '1rem';
-          newEl.innerHTML = `<div class="inner2">
-            <span>${inputEl[0].value.toUpperCase()} ${inputEl[1].value.toUpperCase()}</span>
-            <span>${new Date().toDateString()}</span>
-            </div>
-            <div class="nation">${inputEl[2].value.toUpperCase()}</div>
-            <div>${inputEl[3].value}</div>
-            <div class="events">
-            <img class="delete" src="./image/img.svg" alt="">
-            <span class='five'>+5</span>
-            <span class='five'>-5</span>
-            </div>`;
-
-          divEl.appendChild(newEl);
-          document.querySelectorAll('.events').forEach((event) => {
-            event.style.display = 'flex';
-            event.style.justifyContent = 'space-between';
+        arr.length === 4 &&
+          users.push({
+            firstName: arr[0],
+            lastName: arr[1],
+            country: arr[2],
+            score: arr[3],
           });
-          const deleteEls = document.querySelectorAll('.delete');
-          const userEls = document.querySelectorAll('.user');
-          let currentUserEl = userEls.forEach((userr) => {
-            userr[userr.length - 1];
-          });
-          let currentDeleteEl = deleteEls.forEach((delet) => {
-            delet[delet.length - 1];
-          });
-          currentDeleteEl.addEventListener('click', (e) => {
-            currentUserEl.remove();
-          });
-        }
-        inputEl.forEach((value) => (value = ''));
+        divEl.innerHTML = '';
+        userFunc();
       });
-      // deleteEl.forEach((deletee) => {
-      //   deletee.addEventListener("click", (e) => {
-      //     // userEl.forEach((user) => {
-      //     userEl.remove();
-      //   });
-      // });
-      // });
-      // deleteEl.addEventListener("click", (e) => {
-      //   userEl.remove();
-      // });
+
+      userFunc();
     </script>
   </body>
 </html>
