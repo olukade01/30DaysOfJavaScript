@@ -10,22 +10,17 @@
       body {
         margin: 0;
         padding: 0;
+        text-align: center;
       }
       *,
       ** {
         box-sizing: border-box;
       }
-      body {
-        text-align: center;
-        user-select: none;
-      }
       .wrapper1 {
         background-color: #f0edf2;
-        margin-left: 5%;
-        width: 90%;
+        margin-left: 2%;
+        width: 95%;
         padding: 0.5rem;
-        display: flex;
-        flex-direction: column;
       }
       h1 {
         margin: 0;
@@ -38,9 +33,12 @@
         border-radius: 2rem;
         outline: none;
         border: 2px solid lightgray;
-        /* border-color: lightgray; */
         font-size: 1rem;
         padding: 0.5rem;
+      }
+      ::placeholder {
+        font-size: 0.8rem;
+        color: lightgray;
       }
       .wrapper2 {
         display: flex;
@@ -50,53 +48,46 @@
       }
       .wrapper2 > button {
         width: 10rem;
-        padding: 0.3rem;
+        padding: 0.5rem 0.3rem;
         border-radius: 2rem;
-        outline: none;
-        border-color: #f2a93b;
+        border: none;
         background-color: #f2a93b;
       }
       .container {
         margin-top: 3rem;
         background-color: #f0edf2;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
         padding: 0.5rem 5rem;
       }
       .new-div {
-        height: 13rem;
-        width: 10rem;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
         background-color: white;
         padding: 0.5rem;
-        row-gap: 1rem;
         border-radius: 5px;
       }
       .flag {
         width: 6rem;
+        border: 0.5px solid black;
+      }
+      .countryName {
+        color: #f1b356;
+        align-self: center;
+        margin: 0;
       }
       .inner-wrapper {
-        height: 7rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        row-gap: 0.3rem;
-        flex-wrap: wrap;
-        /* justify-content: center; */
+        padding: 4px 0;
+        text-align: start;
+      }
+      .inner-wrapper > p {
+        margin: 4px;
       }
       .active {
-        /* background-color: black; */
         display: flex;
         justify-content: center;
         align-items: center;
         column-gap: 1rem;
-      }
-      .lang {
-        width: 99%;
-        display: flex;
-        /* flex-wrap: wrap; */
+        cursor: pointer;
       }
       button img {
         display: none;
@@ -106,12 +97,12 @@
         display: inline;
       }
       #data {
-        /* btn.children[1].style.transform = 'rotate(180deg)' */
-        max-width: 90%;
-        padding: 1rem;
+        max-width: 70%;
+        margin: auto;
+        padding: 1rem 0;
         display: grid;
         grid-template-columns: auto 1fr auto;
-        grid-gap: 4px;
+        grid-gap: 1rem;
       }
       #data > div {
         position: relative;
@@ -130,150 +121,191 @@
       }
       .division > button {
         background-color: orange;
-        border-color: orange;
+        border: none;
+        padding: 0.5rem;
       }
       .rotate {
         transform: rotate(180deg);
       }
+      .outcome {
+        color: #f1b356;
+        margin: 5px 0;
+      }
+      #scroll {
+        background-color: #f2a93b;
+        height: 3rem;
+        width: 100%;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+      }
+      .popul {
+        cursor: pointer;
+      }
+      #image {
+        transform: rotate(180deg);
+        cursor: pointer;
+        height: 3rem;
+      }
+      #chart {
+        cursor: pointer;
+        height: 2rem;
+      }
     </style>
   </head>
   <body>
-    <div class="wrapper1">
+    <div class="wrapper1" id="top">
       <h1>World Countries Data</h1>
       <span>Currently, we have 250 countries</span>
-      <span></span>
+      <p class="outcome"></p>
     </div>
-    <input type="text" />
+    <input
+      type="text"
+      placeholder="Search Countries by name, city and languages"
+    />
     <div class="wrapper2">
       <button class="active">
         <span>NAME</span>
-        <img src="./arrow-up-line.svg" alt="arrow-icon" />
+        <img src="./svgs/arrow-down.svg" alt="arrow-icon" />
       </button>
       <button class="active">
         <span>CAPITAL</span>
-        <img src="./arrow-up-line.svg" alt="arrow-icon" />
+        <img src="./svgs/arrow-down.svg" alt="arrow-icon" />
       </button>
       <button class="active">
         <span>POPULATION</span>
-        <img src="./arrow-up-line.svg" alt="arrow-icon" />
+        <img src="./svgs/arrow-down.svg" alt="arrow-icon" />
       </button>
+      <a href="#lang">
+        <img id="chart" src="./svgs/chart.svg" alt="arrow-icon" />
+      </a>
     </div>
-    <div class="container">
-      <!-- <div class="new-div">
-          <img  class='flag'src="https://restcountries.eu/data/afg.svg" alt="">
-          <span>afghnistan</span>
-          <div class="inner-wrapper">
-              <span>capital:akwaibom</span>
-              <span>Language:bulgarian</span>
-              <span>population:220000</span>
-          </div>
-      </div> -->
-    </div>
-    <div class="lang-container">
-      <main>
-        <center>
-          <br />
-          <div class="division">
-            <button class="popul">POPULATION</button>
-            <button class="popul">LANGUAGES</button>
-          </div>
-          <p id="data-info">10 most populated countries in the world</p>
-        </center>
-        <hr />
-        <div id="data">
-          <!-- <span>China</span>
-            <div>
-              <span style="width: 70%"></span>
-            </div>
-            <span>4,70900</span> -->
+    <div class="container"></div>
+    <div id="lang" class="lang-container">
+      <center>
+        <br />
+        <div class="division">
+          <button class="popul">POPULATION</button>
+          <button class="popul">LANGUAGES</button>
         </div>
-      </main>
+        <p id="data-info">10 most populated country in the world</p>
+      </center>
+      <hr />
+      <div id="data"></div>
+    </div>
+    <div id="scroll">
+      <p>Powered by ME</p>
+      <a href="#top">
+        <img id="image" src="./svgs/arrow-up.svg" alt="arrow-icon" />
+      </a>
     </div>
     <script src="./countries_data.js"></script>
+
     <script>
-      const containerEl = document.querySelector(".container");
-      const buttonEl = document.querySelectorAll(".active");
-      const inputEl = document.querySelector("input");
-      const imgEls = document.querySelectorAll("button img");
-      containerEl.style.display = "grid";
-      containerEl.style.gridTemplateColumns = `repeat(6,1fr)`;
-      containerEl.style.gridGap = "0.4rem";
-      let mappedCountry;
-      let searchBy = "";
+      const containerEl = document.querySelector('.container');
+      const buttonEl = document.querySelectorAll('.active');
+      const inputEl = document.querySelector('input');
+      const infoEl = document.querySelector('#data-info');
+      const outcomeEl = document.querySelector('.outcome');
+      const imgEls = document.querySelectorAll('button img');
+      let mappedCountry = countries;
+      let order = false;
       const sortCountryData = (countrys) => {
-        containerEl.innerHTML = "";
+        containerEl.innerHTML = '';
         countrys.forEach(({ name, languages, flag, capital, population }) => {
-          const newEl = document.createElement("div");
-          newEl.classList.add("new-div");
-          newEl.innerHTML = ` <img  class='flag'src="${flag}" alt="">
-              <span>${name}</span>
+          const newEl = document.createElement('div');
+          newEl.classList.add('new-div');
+          newEl.innerHTML = ` <img class='flag' src="${flag}" alt="">
+              <p class='countryName'>${name}</p>
               <div class="inner-wrapper">
-                  <span>capital:${capital}</span>
-                  <span class='lang'>Language:${languages}</span>
-                  <span>population:${population}</span>
+                  <p>capital: ${capital}</p>
+                  <p>Language:${languages.map((l) => ` ${l}`)}</p>
+                  <p>population: ${population}</p>
               </div>`;
           containerEl.appendChild(newEl);
         });
       };
-      const searchWith = (by, inputVal) => {
-        if (by === "NAME") {
-          mappedCountry = countries.filter(({ name }) =>
-            name.toLowerCase().startsWith(inputVal.toLowerCase())
-          );
-        } else if (by === "CAPITAL") {
-          mappedCountry = countries.filter(({ capital }) => {
-            return capital.toLowerCase().startsWith(inputVal.toLowerCase());
-          });
-        } else if (by == "POPULATION") {
-          let filteredCountry = countries.filter(({ name }) => {
-            return name.toLowerCase().startsWith(inputVal.toLowerCase());
-          });
-          mappedCountry = filteredCountry.sort(
-            (a, b) => b.popualtion - a.population
-          );
-        }
-        console.log({ mappedCountry });
-        sortCountryData(mappedCountry);
-      };
-      buttonEl.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
+      buttonEl.forEach((btn, indx) => {
+        btn.addEventListener('click', (e) => {
           e.preventDefault();
-          const buttonText = btn.textContent;
-          if (buttonText !== searchBy) {
-            searchBy = buttonText;
-            buttonEl.forEach((item, itemIndex) => {
-              console.log(imgEls[itemIndex]);
-              imgEls[itemIndex].classList.contains("show")
-                ? imgEls[itemIndex].classList.remove("show")
-                : "";
+          order = order ? false : true;
+          buttonEl.forEach((item, itemIndex) => {
+            imgEls[itemIndex].classList.contains('show')
+              ? imgEls[itemIndex].classList.remove('show')
+              : '';
+          });
+          btn.children[1].classList.add('show');
+          order
+            ? btn.children[1].classList.add('rotate')
+            : btn.children[1].classList.remove('rotate');
+          if (indx === 0) {
+            const data = mappedCountry.sort((a, b) => {
+              let ca = a.name.toUpperCase(),
+                cb = b.name.toUpperCase();
+
+              if (ca < cb) {
+                return -1;
+              }
+              if (ca > cb) {
+                return 1;
+              }
+              return 0;
             });
-            console.log(btn);
-            btn.children[1].classList.add("show");
-            btn.children[1].classList.contains("rotate")
-              ? btn.children[1].classList.remove("rotate")
-              : btn.children[1].classList.add("rotate");
-          } else {
-            btn.children[1].classList.contains("rotate")
-              ? btn.children[1].classList.remove("rotate")
-              : btn.children[1].classList.add("rotate");
+            mappedCountry = order ? data : data.reverse();
+          } else if (indx === 1) {
+            const data = mappedCountry.sort((a, b) => {
+              let ca = a.capital.toLowerCase(),
+                cb = b.capital.toLowerCase();
+
+              if (ca < cb) {
+                return -1;
+              }
+              if (ca > cb) {
+                return 1;
+              }
+              return 0;
+            });
+            mappedCountry = order ? data : data.reverse();
+          } else if (indx === 2) {
+            const data = mappedCountry.sort(
+              (a, b) => a.population - b.population
+            );
+            mappedCountry = order ? data : data.reverse();
           }
+          sortCountryData(mappedCountry);
         });
       });
-      inputEl.addEventListener("input", (e) => {
-        console.log(searchBy.length);
-        if (searchBy) {
-          searchWith(searchBy.trim(), e.target.value);
-        }
+      inputEl.addEventListener('input', (e) => {
+        mappedCountry = countries.filter(
+          (country) =>
+            country.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+            country.capital
+              .toLowerCase()
+              .includes(e.target.value.toLowerCase()) ||
+            country.languages
+              .join(',')
+              .toLowerCase()
+              .includes(e.target.value.toLowerCase())
+        );
+        sortCountryData(mappedCountry);
+        populationData(mappedCountry);
+        e.target.value
+          ? (outcomeEl.textContent = `${mappedCountry.length} countries satisfied the search criteria`)
+          : (outcomeEl.textContent = '');
       });
-      const dataEl = document.getElementById("data");
+      sortCountryData(countries);
+
+      const dataEl = document.getElementById('data');
 
       function populationData(data) {
         const worldPopulation = countries.reduce(
           (acc, cur) => acc + cur.population,
           0
         );
-        console.log(worldPopulation);
-        const mostPopulated = data.sort((a, b) => b.population - a.population);
+        const mostPopulated = data
+          .sort((a, b) => b.population - a.population)
+          .slice(0, 10);
         dataEl.innerHTML = `<span>World</span>
             <div>
               <span style="width: 100%"></span>
@@ -287,13 +319,13 @@
               }%"></span>
             </div>
             <span>${country.population.toLocaleString()}</span>`;
+          infoEl.textContent = 'World Population';
         });
       }
       function languageData(data) {
         const worldLang = new Set(
           countries.map(({ languages }) => languages).flat()
         ).size;
-        dataEl.innerHTML = "";
         languages = {};
         data.forEach(({ languages: lang }) => {
           lang.forEach((language) => {
@@ -304,7 +336,8 @@
         const mostSpoken = Object.entries(languages);
         const tenMostSpoken = mostSpoken
           .map((value) => ({ language: value[0], count: value[1] }))
-          .sort((a, b) => b.count - a.count);
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 10);
         dataEl.innerHTML = `
                  <span>World</span>
               <div>
@@ -319,21 +352,22 @@
                             (count * 100) / worldLang
                           }%"></span>
                           </div>
-                          <span> ${count} </span>
-                     `;
+                          <span> ${count} </span>`;
         });
+        infoEl.textContent = 'World Languages';
       }
-      document.querySelectorAll(".popul").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
+      document.querySelectorAll('.popul').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
           const clicked = event.target.textContent.toLowerCase();
-          if (clicked === "population") {
+          if (clicked === 'population') {
             populationData(mappedCountry);
           }
-          if (clicked === "languages") {
+          if (clicked === 'languages') {
             languageData(mappedCountry);
           }
         });
       });
+      populationData(mappedCountry);
     </script>
   </body>
 </html>
