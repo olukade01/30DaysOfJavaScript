@@ -724,7 +724,7 @@ const countries = [
     capital: 'Basse-Terre',
     languages: ['French'],
     population: 400132,
-    flag: 'https://flagcdn.com/gl.svg',
+    flag: 'https://flagcdn.com/gp.svg',
     currency: 'Euro',
   },
   {
@@ -748,7 +748,7 @@ const countries = [
     capital: 'St. Peter Port',
     languages: ['English', 'French'],
     population: 62999,
-    flag: 'https://flagcdn.com/gy.svg',
+    flag: 'https://flagcdn.com/gg.svg',
     currency: 'British pound',
   },
   {
@@ -756,7 +756,7 @@ const countries = [
     capital: 'Conakry',
     languages: ['French', 'Fula'],
     population: 12947000,
-    flag: 'https://flagcdn.com/gi.svg',
+    flag: 'https://flagcdn.com/gn.svg',
     currency: 'Guinean franc',
   },
   {
@@ -764,7 +764,7 @@ const countries = [
     capital: 'Bissau',
     languages: ['Portuguese'],
     population: 1547777,
-    flag: 'https://flagcdn.com/gb.svg',
+    flag: 'https://flagcdn.com/gw.svg',
     currency: 'West African CFA franc',
   },
   {
@@ -780,7 +780,7 @@ const countries = [
     capital: 'Port-au-Prince',
     languages: ['French', 'Haitian'],
     population: 11078033,
-    flag: 'https://flagcdn.com/hi.svg',
+    flag: 'https://flagcdn.com/ht.svg',
     currency: 'Haitian gourde',
   },
   {
@@ -788,7 +788,7 @@ const countries = [
     capital: '',
     languages: ['English'],
     population: 0,
-    flag: 'https://flagcdn.com/hd.svg',
+    flag: 'https://flagcdn.com/hm.svg',
     currency: 'Australian dollar',
   },
   {
@@ -828,7 +828,7 @@ const countries = [
     capital: 'Reykjavík',
     languages: ['Icelandic'],
     population: 334300,
-    flag: 'https://flagcdn.com/il.svg',
+    flag: 'https://flagcdn.com/is.svg',
     currency: 'Icelandic króna',
   },
   {
@@ -852,7 +852,7 @@ const countries = [
     capital: 'Yamoussoukro',
     languages: ['French'],
     population: 22671331,
-    flag: 'https://flagcdn.com/cv.svg',
+    flag: 'https://flagcdn.com/ci.svg',
     currency: 'West African CFA franc',
   },
   {
@@ -876,7 +876,7 @@ const countries = [
     capital: 'Dublin',
     languages: ['Irish', 'English'],
     population: 6378000,
-    flag: 'https://flagcdn.com/ir.svg',
+    flag: 'https://flagcdn.com/ie.svg',
     currency: 'Euro',
   },
   {
@@ -892,7 +892,7 @@ const countries = [
     capital: 'Jerusalem',
     languages: ['Hebrew (modern)', 'Arabic'],
     population: 8527400,
-    flag: 'https://flagcdn.com/is.svg',
+    flag: 'https://flagcdn.com/il.svg',
     currency: 'Israeli new shekel',
   },
   {
@@ -940,7 +940,7 @@ const countries = [
     capital: 'Astana',
     languages: ['Kazakh', 'Russian'],
     population: 17753200,
-    flag: 'https://flagcdn.com/ka.svg',
+    flag: 'https://flagcdn.com/kz.svg',
     currency: 'Kazakhstani tenge',
   },
   {
@@ -1012,7 +1012,7 @@ const countries = [
     capital: 'Monrovia',
     languages: ['English'],
     population: 4615000,
-    flag: 'https://flagcdn.com/lb.svg',
+    flag: 'https://flagcdn.com/lr.svg',
     currency: 'Liberian dollar',
   },
   {
@@ -1052,7 +1052,7 @@ const countries = [
     capital: '',
     languages: ['Chinese', 'Portuguese'],
     population: 649100,
-    flag: 'https://flagcdn.com/ma.svg',
+    flag: 'https://flagcdn.com/mo.svg',
     currency: 'Macanese pataca',
   },
   {
@@ -1060,7 +1060,7 @@ const countries = [
     capital: 'Skopje',
     languages: ['Macedonian'],
     population: 2058539,
-    flag: 'https://flagcdn.com/md.svg',
+    flag: 'https://flagcdn.com/mk.svg',
     currency: 'Macedonian denar',
   },
   {
@@ -1068,7 +1068,7 @@ const countries = [
     capital: 'Antananarivo',
     languages: ['French', 'Malagasy'],
     population: 22434363,
-    flag: 'https://flagcdn.com/md.svg',
+    flag: 'https://flagcdn.com/mg.svg',
     currency: 'Malagasy ariary',
   },
   {
@@ -1092,7 +1092,7 @@ const countries = [
     capital: 'Malé',
     languages: ['Divehi'],
     population: 344023,
-    flag: 'https://flagcdn.com/md.svg',
+    flag: 'https://flagcdn.com/mv.svg',
     currency: 'Maldivian rufiyaa',
   },
   {
@@ -1108,7 +1108,7 @@ const countries = [
     capital: 'Valletta',
     languages: ['Maltese', 'English'],
     population: 425384,
-    flag: 'https://flagcdn.com/ml.svg',
+    flag: 'https://flagcdn.com/mt.svg',
     currency: 'Euro',
   },
   {
@@ -1124,7 +1124,7 @@ const countries = [
     capital: 'Fort-de-France',
     languages: ['French'],
     population: 378243,
-    flag: 'https://flagcdn.com/mt.svg',
+    flag: 'https://flagcdn.com/mq.svg',
     currency: 'Euro',
   },
   {
@@ -1148,7 +1148,7 @@ const countries = [
     capital: 'Mamoudzou',
     languages: ['French'],
     population: 226915,
-    flag: 'https://flagcdn.com/my.svg',
+    flag: 'https://flagcdn.com/yt.svg',
     currency: 'Euro',
   },
   {
@@ -1156,7 +1156,7 @@ const countries = [
     capital: 'Mexico City',
     languages: ['Spanish'],
     population: 122273473,
-    flag: 'https://flagcdn.com/me.svg',
+    flag: 'https://flagcdn.com/mx.svg',
     currency: 'Mexican peso',
   },
   {
@@ -1180,7 +1180,7 @@ const countries = [
     capital: 'Monaco',
     languages: ['French'],
     population: 38400,
-    flag: 'https://flagcdn.com/mo.svg',
+    flag: 'https://flagcdn.com/mc.svg',
     currency: 'Euro',
   },
   {
@@ -1212,7 +1212,7 @@ const countries = [
     capital: 'Rabat',
     languages: ['Arabic'],
     population: 33337529,
-    flag: 'https://flagcdn.com/mr.svg',
+    flag: 'https://flagcdn.com/ma.svg',
     currency: 'Moroccan dirham',
   },
   {
@@ -1220,7 +1220,7 @@ const countries = [
     capital: 'Maputo',
     languages: ['Portuguese'],
     population: 26423700,
-    flag: 'https://flagcdn.com/mo.svg',
+    flag: 'https://flagcdn.com/mz.svg',
     currency: 'Mozambican metical',
   },
   {
@@ -1236,7 +1236,7 @@ const countries = [
     capital: 'Windhoek',
     languages: ['English', 'Afrikaans'],
     population: 2324388,
-    flag: 'https://flagcdn.com/axnam.svg',
+    flag: 'https://flagcdn.com/na.svg',
     currency: 'Namibian dollar',
   },
   {
@@ -1244,7 +1244,7 @@ const countries = [
     capital: 'Yaren',
     languages: ['English', 'Nauruan'],
     population: 10084,
-    flag: 'https://flagcdn.com/axnru.svg',
+    flag: 'https://flagcdn.com/nr.svg',
     currency: 'Australian dollar',
   },
   {
@@ -1252,7 +1252,7 @@ const countries = [
     capital: 'Kathmandu',
     languages: ['Nepali'],
     population: 28431500,
-    flag: 'https://flagcdn.com/axnpl.svg',
+    flag: 'https://flagcdn.com/np.svg',
     currency: 'Nepalese rupee',
   },
   {
@@ -1260,7 +1260,7 @@ const countries = [
     capital: 'Amsterdam',
     languages: ['Dutch'],
     population: 17019800,
-    flag: 'https://flagcdn.com/axnld.svg',
+    flag: 'https://flagcdn.com/nl.svg',
     currency: 'Euro',
   },
   {
@@ -1268,7 +1268,7 @@ const countries = [
     capital: 'Nouméa',
     languages: ['French'],
     population: 268767,
-    flag: 'https://flagcdn.com/axncl.svg',
+    flag: 'https://flagcdn.com/nc.svg',
     currency: 'CFP franc',
   },
   {
@@ -1276,7 +1276,7 @@ const countries = [
     capital: 'Wellington',
     languages: ['English', 'Māori'],
     population: 4697854,
-    flag: 'https://flagcdn.com/axnzl.svg',
+    flag: 'https://flagcdn.com/nz.svg',
     currency: 'New Zealand dollar',
   },
   {
@@ -1284,7 +1284,7 @@ const countries = [
     capital: 'Managua',
     languages: ['Spanish'],
     population: 6262703,
-    flag: 'https://flagcdn.com/axnic.svg',
+    flag: 'https://flagcdn.com/ni.svg',
     currency: 'Nicaraguan córdoba',
   },
   {
@@ -1292,7 +1292,7 @@ const countries = [
     capital: 'Niamey',
     languages: ['French'],
     population: 20715000,
-    flag: 'https://flagcdn.com/axner.svg',
+    flag: 'https://flagcdn.com/ne.svg',
     currency: 'West African CFA franc',
   },
   {
@@ -1300,7 +1300,7 @@ const countries = [
     capital: 'Abuja',
     languages: ['English'],
     population: 186988000,
-    flag: 'https://flagcdn.com/axnga.svg',
+    flag: 'https://flagcdn.com/ng.svg',
     currency: 'Nigerian naira',
   },
   {
@@ -1308,7 +1308,7 @@ const countries = [
     capital: 'Alofi',
     languages: ['English'],
     population: 1470,
-    flag: 'https://flagcdn.com/axniu.svg',
+    flag: 'https://flagcdn.com/nu.svg',
     currency: 'New Zealand dollar',
   },
   {
@@ -1316,7 +1316,7 @@ const countries = [
     capital: 'Kingston',
     languages: ['English'],
     population: 2302,
-    flag: 'https://flagcdn.com/axnfk.svg',
+    flag: 'https://flagcdn.com/nf.svg',
     currency: 'Australian dollar',
   },
   {
@@ -1324,7 +1324,7 @@ const countries = [
     capital: 'Pyongyang',
     languages: ['Korean'],
     population: 25281000,
-    flag: 'https://flagcdn.com/axprk.svg',
+    flag: 'https://flagcdn.com/kp.svg',
     currency: 'North Korean won',
   },
   {
@@ -1332,7 +1332,7 @@ const countries = [
     capital: 'Saipan',
     languages: ['English', 'Chamorro'],
     population: 56940,
-    flag: 'https://flagcdn.com/axmnp.svg',
+    flag: 'https://flagcdn.com/np.svg',
     currency: 'United States dollar',
   },
   {
@@ -1340,7 +1340,7 @@ const countries = [
     capital: 'Oslo',
     languages: ['Norwegian', 'Norwegian Bokmål', 'Norwegian Nynorsk'],
     population: 5223256,
-    flag: 'https://flagcdn.com/axnor.svg',
+    flag: 'https://flagcdn.com/no.svg',
     currency: 'Norwegian krone',
   },
   {
@@ -1348,7 +1348,7 @@ const countries = [
     capital: 'Muscat',
     languages: ['Arabic'],
     population: 4420133,
-    flag: 'https://flagcdn.com/axomn.svg',
+    flag: 'https://flagcdn.com/om.svg',
     currency: 'Omani rial',
   },
   {
@@ -1356,7 +1356,7 @@ const countries = [
     capital: 'Islamabad',
     languages: ['English', 'Urdu'],
     population: 194125062,
-    flag: 'https://flagcdn.com/axpak.svg',
+    flag: 'https://flagcdn.com/pk.svg',
     currency: 'Pakistani rupee',
   },
   {
@@ -1364,7 +1364,7 @@ const countries = [
     capital: 'Ngerulmud',
     languages: ['English'],
     population: 17950,
-    flag: 'https://flagcdn.com/axplw.svg',
+    flag: 'https://flagcdn.com/pw.svg',
     currency: '[E]',
   },
   {
@@ -1372,7 +1372,7 @@ const countries = [
     capital: 'Ramallah',
     languages: ['Arabic'],
     population: 4682467,
-    flag: 'https://flagcdn.com/axpse.svg',
+    flag: 'https://flagcdn.com/ps.svg',
     currency: 'Israeli new sheqel',
   },
   {
@@ -1380,7 +1380,7 @@ const countries = [
     capital: 'Panama City',
     languages: ['Spanish'],
     population: 3814672,
-    flag: 'https://flagcdn.com/axpan.svg',
+    flag: 'https://flagcdn.com/pa.svg',
     currency: 'Panamanian balboa',
   },
   {
@@ -1388,7 +1388,7 @@ const countries = [
     capital: 'Port Moresby',
     languages: ['English'],
     population: 8083700,
-    flag: 'https://flagcdn.com/axpng.svg',
+    flag: 'https://flagcdn.com/pg.svg',
     currency: 'Papua New Guinean kina',
   },
   {
@@ -1396,7 +1396,7 @@ const countries = [
     capital: 'Asunción',
     languages: ['Spanish', 'Guaraní'],
     population: 6854536,
-    flag: 'https://flagcdn.com/axpry.svg',
+    flag: 'https://flagcdn.com/py.svg',
     currency: 'Paraguayan guaraní',
   },
   {
@@ -1404,7 +1404,7 @@ const countries = [
     capital: 'Lima',
     languages: ['Spanish'],
     population: 31488700,
-    flag: 'https://flagcdn.com/axper.svg',
+    flag: 'https://flagcdn.com/pe.svg',
     currency: 'Peruvian sol',
   },
   {
@@ -1412,7 +1412,7 @@ const countries = [
     capital: 'Manila',
     languages: ['English'],
     population: 103279800,
-    flag: 'https://flagcdn.com/axphl.svg',
+    flag: 'https://flagcdn.com/ph.svg',
     currency: 'Philippine peso',
   },
   {
@@ -1420,7 +1420,7 @@ const countries = [
     capital: 'Adamstown',
     languages: ['English'],
     population: 56,
-    flag: 'https://flagcdn.com/axpcn.svg',
+    flag: 'https://flagcdn.com/pn.svg',
     currency: 'New Zealand dollar',
   },
   {
@@ -1428,7 +1428,7 @@ const countries = [
     capital: 'Warsaw',
     languages: ['Polish'],
     population: 38437239,
-    flag: 'https://flagcdn.com/axpol.svg',
+    flag: 'https://flagcdn.com/pl.svg',
     currency: 'Polish złoty',
   },
   {
@@ -1436,7 +1436,7 @@ const countries = [
     capital: 'Lisbon',
     languages: ['Portuguese'],
     population: 10374822,
-    flag: 'https://flagcdn.com/axprt.svg',
+    flag: 'https://flagcdn.com/pt.svg',
     currency: 'Euro',
   },
   {
@@ -1444,7 +1444,7 @@ const countries = [
     capital: 'San Juan',
     languages: ['Spanish', 'English'],
     population: 3474182,
-    flag: 'https://flagcdn.com/axpri.svg',
+    flag: 'https://flagcdn.com/pr.svg',
     currency: 'United States dollar',
   },
   {
@@ -1452,7 +1452,7 @@ const countries = [
     capital: 'Doha',
     languages: ['Arabic'],
     population: 2587564,
-    flag: 'https://flagcdn.com/axqat.svg',
+    flag: 'https://flagcdn.com/qa.svg',
     currency: 'Qatari riyal',
   },
   {
@@ -1460,7 +1460,7 @@ const countries = [
     capital: 'Pristina',
     languages: ['Albanian', 'Serbian'],
     population: 1733842,
-    flag: 'https://flagcdn.com/axkos.svg',
+    flag: 'https://flagcdn.com/xk.svg',
     currency: 'Euro',
   },
   {
@@ -1468,7 +1468,7 @@ const countries = [
     capital: 'Saint-Denis',
     languages: ['French'],
     population: 840974,
-    flag: 'https://flagcdn.com/axreu.svg',
+    flag: 'https://flagcdn.com/re.svg',
     currency: 'Euro',
   },
   {
@@ -1476,7 +1476,7 @@ const countries = [
     capital: 'Bucharest',
     languages: ['Romanian'],
     population: 19861408,
-    flag: 'https://flagcdn.com/axrou.svg',
+    flag: 'https://flagcdn.com/ro.svg',
     currency: 'Romanian leu',
   },
   {
@@ -1484,7 +1484,7 @@ const countries = [
     capital: 'Moscow',
     languages: ['Russian'],
     population: 146599183,
-    flag: 'https://flagcdn.com/axrus.svg',
+    flag: 'https://flagcdn.com/ru.svg',
     currency: 'Russian ruble',
   },
   {
@@ -1492,7 +1492,7 @@ const countries = [
     capital: 'Kigali',
     languages: ['Kinyarwanda', 'English', 'French'],
     population: 11553188,
-    flag: 'https://flagcdn.com/axrwa.svg',
+    flag: 'https://flagcdn.com/rw.svg',
     currency: 'Rwandan franc',
   },
   {
@@ -1500,7 +1500,7 @@ const countries = [
     capital: 'Gustavia',
     languages: ['French'],
     population: 9417,
-    flag: 'https://flagcdn.com/axblm.svg',
+    flag: 'https://flagcdn.com/bl.svg',
     currency: 'Euro',
   },
   {
@@ -1508,7 +1508,7 @@ const countries = [
     capital: 'Jamestown',
     languages: ['English'],
     population: 4255,
-    flag: 'https://flagcdn.com/axshn.svg',
+    flag: 'https://flagcdn.com/sh.svg',
     currency: 'Saint Helena pound',
   },
   {
@@ -1516,7 +1516,7 @@ const countries = [
     capital: 'Basseterre',
     languages: ['English'],
     population: 46204,
-    flag: 'https://flagcdn.com/axkna.svg',
+    flag: 'https://flagcdn.com/kn.svg',
     currency: 'East Caribbean dollar',
   },
   {
@@ -1524,7 +1524,7 @@ const countries = [
     capital: 'Castries',
     languages: ['English'],
     population: 186000,
-    flag: 'https://flagcdn.com/axlca.svg',
+    flag: 'https://flagcdn.com/lc.svg',
     currency: 'East Caribbean dollar',
   },
   {
@@ -1532,7 +1532,7 @@ const countries = [
     capital: 'Marigot',
     languages: ['English', 'French', 'Dutch'],
     population: 36979,
-    flag: 'https://flagcdn.com/axmaf.svg',
+    flag: 'https://flagcdn.com/mf.svg',
     currency: 'Euro',
   },
   {
@@ -1540,7 +1540,7 @@ const countries = [
     capital: 'Saint-Pierre',
     languages: ['French'],
     population: 6069,
-    flag: 'https://flagcdn.com/axspm.svg',
+    flag: 'https://flagcdn.com/pm.svg',
     currency: 'Euro',
   },
   {
@@ -1548,7 +1548,7 @@ const countries = [
     capital: 'Kingstown',
     languages: ['English'],
     population: 109991,
-    flag: 'https://flagcdn.com/axvct.svg',
+    flag: 'https://flagcdn.com/vc.svg',
     currency: 'East Caribbean dollar',
   },
   {
@@ -1556,7 +1556,7 @@ const countries = [
     capital: 'Apia',
     languages: ['Samoan', 'English'],
     population: 194899,
-    flag: 'https://flagcdn.com/axwsm.svg',
+    flag: 'https://flagcdn.com/ws.svg',
     currency: 'Samoan tālā',
   },
   {
@@ -1564,7 +1564,7 @@ const countries = [
     capital: 'City of San Marino',
     languages: ['Italian'],
     population: 33005,
-    flag: 'https://flagcdn.com/axsmr.svg',
+    flag: 'https://flagcdn.com/sm.svg',
     currency: 'Euro',
   },
   {
@@ -1572,7 +1572,7 @@ const countries = [
     capital: 'São Tomé',
     languages: ['Portuguese'],
     population: 187356,
-    flag: 'https://flagcdn.com/axstp.svg',
+    flag: 'https://flagcdn.com/st.svg',
     currency: 'São Tomé and Príncipe dobra',
   },
   {
@@ -1580,7 +1580,7 @@ const countries = [
     capital: 'Riyadh',
     languages: ['Arabic'],
     population: 32248200,
-    flag: 'https://flagcdn.com/axsau.svg',
+    flag: 'https://flagcdn.com/sa.svg',
     currency: 'Saudi riyal',
   },
   {
@@ -1588,7 +1588,7 @@ const countries = [
     capital: 'Dakar',
     languages: ['French'],
     population: 14799859,
-    flag: 'https://flagcdn.com/axsen.svg',
+    flag: 'https://flagcdn.com/sn.svg',
     currency: 'West African CFA franc',
   },
   {
@@ -1596,7 +1596,7 @@ const countries = [
     capital: 'Belgrade',
     languages: ['Serbian'],
     population: 7076372,
-    flag: 'https://flagcdn.com/axsrb.svg',
+    flag: 'https://flagcdn.com/rs.svg',
     currency: 'Serbian dinar',
   },
   {
@@ -1604,7 +1604,7 @@ const countries = [
     capital: 'Victoria',
     languages: ['French', 'English'],
     population: 91400,
-    flag: 'https://flagcdn.com/axsyc.svg',
+    flag: 'https://flagcdn.com/sc.svg',
     currency: 'Seychellois rupee',
   },
   {
@@ -1612,7 +1612,7 @@ const countries = [
     capital: 'Freetown',
     languages: ['English'],
     population: 7075641,
-    flag: 'https://flagcdn.com/axsle.svg',
+    flag: 'https://flagcdn.com/sl.svg',
     currency: 'Sierra Leonean leone',
   },
   {
@@ -1620,7 +1620,7 @@ const countries = [
     capital: 'Singapore',
     languages: ['English', 'Malay', 'Tamil', 'Chinese'],
     population: 5535000,
-    flag: 'https://flagcdn.com/axsgp.svg',
+    flag: 'https://flagcdn.com/sg.svg',
     currency: 'Brunei dollar',
   },
   {
@@ -1628,7 +1628,7 @@ const countries = [
     capital: 'Philipsburg',
     languages: ['Dutch', 'English'],
     population: 38247,
-    flag: 'https://flagcdn.com/axsxm.svg',
+    flag: 'https://flagcdn.com/sx.svg',
     currency: 'Netherlands Antillean guilder',
   },
   {
@@ -1636,7 +1636,7 @@ const countries = [
     capital: 'Bratislava',
     languages: ['Slovak'],
     population: 5426252,
-    flag: 'https://flagcdn.com/axsvk.svg',
+    flag: 'https://flagcdn.com/sk.svg',
     currency: 'Euro',
   },
   {
@@ -1644,7 +1644,7 @@ const countries = [
     capital: 'Ljubljana',
     languages: ['Slovene'],
     population: 2064188,
-    flag: 'https://flagcdn.com/axsvn.svg',
+    flag: 'https://flagcdn.com/si.svg',
     currency: 'Euro',
   },
   {
@@ -1652,7 +1652,7 @@ const countries = [
     capital: 'Honiara',
     languages: ['English'],
     population: 642000,
-    flag: 'https://flagcdn.com/axslb.svg',
+    flag: 'https://flagcdn.com/sb.svg',
     currency: 'Solomon Islands dollar',
   },
   {
@@ -1660,7 +1660,7 @@ const countries = [
     capital: 'Mogadishu',
     languages: ['Somali', 'Arabic'],
     population: 11079000,
-    flag: 'https://flagcdn.com/axsom.svg',
+    flag: 'https://flagcdn.com/so.svg',
     currency: 'Somali shilling',
   },
   {
@@ -1679,7 +1679,7 @@ const countries = [
       'Zulu',
     ],
     population: 55653654,
-    flag: 'https://flagcdn.com/axzaf.svg',
+    flag: 'https://flagcdn.com/za.svg',
     currency: 'South African rand',
   },
   {
@@ -1687,7 +1687,7 @@ const countries = [
     capital: 'King Edward Point',
     languages: ['English'],
     population: 30,
-    flag: 'https://flagcdn.com/axsgs.svg',
+    flag: 'https://flagcdn.com/gs.svg',
     currency: 'British pound',
   },
   {
@@ -1695,7 +1695,7 @@ const countries = [
     capital: 'Seoul',
     languages: ['Korean'],
     population: 50801405,
-    flag: 'https://flagcdn.com/axkor.svg',
+    flag: 'https://flagcdn.com/kr.svg',
     currency: 'South Korean won',
   },
   {
@@ -1703,7 +1703,7 @@ const countries = [
     capital: 'Juba',
     languages: ['English'],
     population: 12131000,
-    flag: 'https://flagcdn.com/axssd.svg',
+    flag: 'https://flagcdn.com/ss.svg',
     currency: 'South Sudanese pound',
   },
   {
@@ -1711,7 +1711,7 @@ const countries = [
     capital: 'Madrid',
     languages: ['Spanish'],
     population: 46438422,
-    flag: 'https://flagcdn.com/axesp.svg',
+    flag: 'https://flagcdn.com/es.svg',
     currency: 'Euro',
   },
   {
@@ -1719,7 +1719,7 @@ const countries = [
     capital: 'Colombo',
     languages: ['Sinhalese', 'Tamil'],
     population: 20966000,
-    flag: 'https://flagcdn.com/axlka.svg',
+    flag: 'https://flagcdn.com/lk.svg',
     currency: 'Sri Lankan rupee',
   },
   {
@@ -1727,7 +1727,7 @@ const countries = [
     capital: 'Khartoum',
     languages: ['Arabic', 'English'],
     population: 39598700,
-    flag: 'https://flagcdn.com/axsdn.svg',
+    flag: 'https://flagcdn.com/sd.svg',
     currency: 'Sudanese pound',
   },
   {
@@ -1735,7 +1735,7 @@ const countries = [
     capital: 'Paramaribo',
     languages: ['Dutch'],
     population: 541638,
-    flag: 'https://flagcdn.com/axsur.svg',
+    flag: 'https://flagcdn.com/sr.svg',
     currency: 'Surinamese dollar',
   },
   {
@@ -1743,7 +1743,7 @@ const countries = [
     capital: 'Longyearbyen',
     languages: ['Norwegian'],
     population: 2562,
-    flag: 'https://flagcdn.com/axsjm.svg',
+    flag: 'https://flagcdn.com/sj.svg',
     currency: 'Norwegian krone',
   },
   {
@@ -1751,7 +1751,7 @@ const countries = [
     capital: 'Lobamba',
     languages: ['English', 'Swati'],
     population: 1132657,
-    flag: 'https://flagcdn.com/axswz.svg',
+    flag: 'https://flagcdn.com/sz.svg',
     currency: 'Swazi lilangeni',
   },
   {
@@ -1759,7 +1759,7 @@ const countries = [
     capital: 'Stockholm',
     languages: ['Swedish'],
     population: 9894888,
-    flag: 'https://flagcdn.com/axswe.svg',
+    flag: 'https://flagcdn.com/se.svg',
     currency: 'Swedish krona',
   },
   {
@@ -1767,7 +1767,7 @@ const countries = [
     capital: 'Bern',
     languages: ['German', 'French', 'Italian'],
     population: 8341600,
-    flag: 'https://flagcdn.com/axche.svg',
+    flag: 'https://flagcdn.com/ch.svg',
     currency: 'Swiss franc',
   },
   {
@@ -1775,7 +1775,7 @@ const countries = [
     capital: 'Damascus',
     languages: ['Arabic'],
     population: 18564000,
-    flag: 'https://flagcdn.com/axsyr.svg',
+    flag: 'https://flagcdn.com/sy.svg',
     currency: 'Syrian pound',
   },
   {
@@ -1783,7 +1783,7 @@ const countries = [
     capital: 'Taipei',
     languages: ['Chinese'],
     population: 23503349,
-    flag: 'https://flagcdn.com/axtwn.svg',
+    flag: 'https://flagcdn.com/tw.svg',
     currency: 'New Taiwan dollar',
   },
   {
@@ -1791,7 +1791,7 @@ const countries = [
     capital: 'Dushanbe',
     languages: ['Tajik', 'Russian'],
     population: 8593600,
-    flag: 'https://flagcdn.com/axtjk.svg',
+    flag: 'https://flagcdn.com/tj.svg',
     currency: 'Tajikistani somoni',
   },
   {
@@ -1799,7 +1799,7 @@ const countries = [
     capital: 'Dodoma',
     languages: ['Swahili', 'English'],
     population: 55155000,
-    flag: 'https://flagcdn.com/axtza.svg',
+    flag: 'https://flagcdn.com/tz.svg',
     currency: 'Tanzanian shilling',
   },
   {
@@ -1807,7 +1807,7 @@ const countries = [
     capital: 'Bangkok',
     languages: ['Thai'],
     population: 65327652,
-    flag: 'https://flagcdn.com/axtha.svg',
+    flag: 'https://flagcdn.com/th.svg',
     currency: 'Thai baht',
   },
   {
@@ -1815,7 +1815,7 @@ const countries = [
     capital: 'Dili',
     languages: ['Portuguese'],
     population: 1167242,
-    flag: 'https://flagcdn.com/axtls.svg',
+    flag: 'https://flagcdn.com/tl.svg',
     currency: 'United States dollar',
   },
   {
@@ -1823,7 +1823,7 @@ const countries = [
     capital: 'Lomé',
     languages: ['French'],
     population: 7143000,
-    flag: 'https://flagcdn.com/axtgo.svg',
+    flag: 'https://flagcdn.com/tg.svg',
     currency: 'West African CFA franc',
   },
   {
@@ -1831,7 +1831,7 @@ const countries = [
     capital: 'Fakaofo',
     languages: ['English'],
     population: 1411,
-    flag: 'https://flagcdn.com/axtkl.svg',
+    flag: 'https://flagcdn.com/tk.svg',
     currency: 'New Zealand dollar',
   },
   {
@@ -1839,7 +1839,7 @@ const countries = [
     capital: "Nuku'alofa",
     languages: ['English', 'Tonga (Tonga Islands)'],
     population: 103252,
-    flag: 'https://flagcdn.com/axton.svg',
+    flag: 'https://flagcdn.com/to.svg',
     currency: 'Tongan paʻanga',
   },
   {
@@ -1847,7 +1847,7 @@ const countries = [
     capital: 'Port of Spain',
     languages: ['English'],
     population: 1349667,
-    flag: 'https://flagcdn.com/axtto.svg',
+    flag: 'https://flagcdn.com/tt.svg',
     currency: 'Trinidad and Tobago dollar',
   },
   {
@@ -1855,7 +1855,7 @@ const countries = [
     capital: 'Tunis',
     languages: ['Arabic'],
     population: 11154400,
-    flag: 'https://flagcdn.com/axtun.svg',
+    flag: 'https://flagcdn.com/tn.svg',
     currency: 'Tunisian dinar',
   },
   {
@@ -1863,7 +1863,7 @@ const countries = [
     capital: 'Ankara',
     languages: ['Turkish'],
     population: 78741053,
-    flag: 'https://flagcdn.com/axtur.svg',
+    flag: 'https://flagcdn.com/tr.svg',
     currency: 'Turkish lira',
   },
   {
@@ -1871,7 +1871,7 @@ const countries = [
     capital: 'Ashgabat',
     languages: ['Turkmen', 'Russian'],
     population: 4751120,
-    flag: 'https://flagcdn.com/axtkm.svg',
+    flag: 'https://flagcdn.com/tm.svg',
     currency: 'Turkmenistan manat',
   },
   {
@@ -1879,7 +1879,7 @@ const countries = [
     capital: 'Cockburn Town',
     languages: ['English'],
     population: 31458,
-    flag: 'https://flagcdn.com/axtca.svg',
+    flag: 'https://flagcdn.com/tc.svg',
     currency: 'United States dollar',
   },
   {
@@ -1887,7 +1887,7 @@ const countries = [
     capital: 'Funafuti',
     languages: ['English'],
     population: 10640,
-    flag: 'https://flagcdn.com/axtuv.svg',
+    flag: 'https://flagcdn.com/tv.svg',
     currency: 'Australian dollar',
   },
   {
@@ -1895,7 +1895,7 @@ const countries = [
     capital: 'Kampala',
     languages: ['English', 'Swahili'],
     population: 33860700,
-    flag: 'https://flagcdn.com/axuga.svg',
+    flag: 'https://flagcdn.com/ug.svg',
     currency: 'Ugandan shilling',
   },
   {
@@ -1903,7 +1903,7 @@ const countries = [
     capital: 'Kiev',
     languages: ['Ukrainian'],
     population: 42692393,
-    flag: 'https://flagcdn.com/axukr.svg',
+    flag: 'https://flagcdn.com/ua.svg',
     currency: 'Ukrainian hryvnia',
   },
   {
@@ -1911,7 +1911,7 @@ const countries = [
     capital: 'Abu Dhabi',
     languages: ['Arabic'],
     population: 9856000,
-    flag: 'https://flagcdn.com/axare.svg',
+    flag: 'https://flagcdn.com/ae.svg',
     currency: 'United Arab Emirates dirham',
   },
   {
@@ -1919,7 +1919,7 @@ const countries = [
     capital: 'London',
     languages: ['English'],
     population: 65110000,
-    flag: 'https://flagcdn.com/axgbr.svg',
+    flag: 'https://flagcdn.com/gb.svg',
     currency: 'British pound',
   },
   {
@@ -1927,7 +1927,7 @@ const countries = [
     capital: 'Washington, D.C.',
     languages: ['English'],
     population: 323947000,
-    flag: 'https://flagcdn.com/axusa.svg',
+    flag: 'https://flagcdn.com/us.svg',
     currency: 'United States dollar',
   },
   {
@@ -1935,7 +1935,7 @@ const countries = [
     capital: 'Montevideo',
     languages: ['Spanish'],
     population: 3480222,
-    flag: 'https://flagcdn.com/axury.svg',
+    flag: 'https://flagcdn.com/uy.svg',
     currency: 'Uruguayan peso',
   },
   {
@@ -1943,7 +1943,7 @@ const countries = [
     capital: 'Tashkent',
     languages: ['Uzbek', 'Russian'],
     population: 31576400,
-    flag: 'https://flagcdn.com/axuzb.svg',
+    flag: 'https://flagcdn.com/uz.svg',
     currency: "Uzbekistani so'm",
   },
   {
@@ -1951,7 +1951,7 @@ const countries = [
     capital: 'Port Vila',
     languages: ['Bislama', 'English', 'French'],
     population: 277500,
-    flag: 'https://flagcdn.com/axvut.svg',
+    flag: 'https://flagcdn.com/vu.svg',
     currency: 'Vanuatu vatu',
   },
   {
@@ -1959,7 +1959,7 @@ const countries = [
     capital: 'Caracas',
     languages: ['Spanish'],
     population: 31028700,
-    flag: 'https://flagcdn.com/axven.svg',
+    flag: 'https://flagcdn.com/ve.svg',
     currency: 'Venezuelan bolívar',
   },
   {
@@ -1967,7 +1967,7 @@ const countries = [
     capital: 'Hanoi',
     languages: ['Vietnamese'],
     population: 92700000,
-    flag: 'https://flagcdn.com/axvnm.svg',
+    flag: 'https://flagcdn.com/vn.svg',
     currency: 'Vietnamese đồng',
   },
   {
@@ -1975,7 +1975,7 @@ const countries = [
     capital: 'Mata-Utu',
     languages: ['French'],
     population: 11750,
-    flag: 'https://flagcdn.com/axwlf.svg',
+    flag: 'https://flagcdn.com/wf.svg',
     currency: 'CFP franc',
   },
   {
@@ -1983,7 +1983,7 @@ const countries = [
     capital: 'El Aaiún',
     languages: ['Spanish'],
     population: 510713,
-    flag: 'https://flagcdn.com/axesh.svg',
+    flag: 'https://flagcdn.com/eh.svg',
     currency: 'Moroccan dirham',
   },
   {
@@ -1991,7 +1991,7 @@ const countries = [
     capital: "Sana'a",
     languages: ['Arabic'],
     population: 27478000,
-    flag: 'https://flagcdn.com/axyem.svg',
+    flag: 'https://flagcdn.com/ye.svg',
     currency: 'Yemeni rial',
   },
   {
@@ -1999,7 +1999,7 @@ const countries = [
     capital: 'Lusaka',
     languages: ['English'],
     population: 15933883,
-    flag: 'https://flagcdn.com/axzmb.svg',
+    flag: 'https://flagcdn.com/zm.svg',
     currency: 'Zambian kwacha',
   },
   {
@@ -2007,7 +2007,7 @@ const countries = [
     capital: 'Harare',
     languages: ['English', 'Shona', 'Northern Ndebele'],
     population: 14240168,
-    flag: 'https://flagcdn.com/axzwe.svg',
+    flag: 'https://flagcdn.com/zw.svg',
     currency: 'Botswana pula',
   },
 ];
